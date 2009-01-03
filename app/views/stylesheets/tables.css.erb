@@ -1,0 +1,55 @@
+/* =Tables
+-----------------------------------------------------------------------------*/
+
+table {border-spacing: 0;border-collapse: collapse;}
+td {text-align: left;font-weight: normal;}
+tr.odd td{background-color:#e4efef;}
+
+.weekly-schedule, .calendar {
+	width:100%;
+  margin:0 auto 20px auto;
+
+}
+.weekly-schedule th{
+	width:16.6%;
+}
+.weekly-schedule th, .weekly-schedule td, .calendar th, .calendar td {
+	border:1px solid <%= @red %>;
+	padding:2px;
+	font-size:0.75em;
+	text-align:center;
+}
+.weekly-schedule th, .calendar th{
+	background:<%= @red %>;
+	color:#fff;
+}
+
+td.kids{
+	background:<%= @yellow %>;
+}
+
+/* Calendar
+************************************/
+
+.calendar .monthName{
+	text-align:center;
+	padding-bottom: 0.5em;
+	background-color: #fff;
+	color:<%= @red %>;
+	border:none;
+}
+
+
+.today{
+
+}
+
+
+.specialDay {
+	background:<%= @yellow %>;
+}
+
+.otherMonth {
+	background: <%= @grey %>;
+}
+

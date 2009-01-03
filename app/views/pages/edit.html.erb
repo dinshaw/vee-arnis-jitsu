@@ -1,0 +1,36 @@
+<% @content_heading = "Editing page" %>
+<%= error_messages_for :page %>
+
+<% form_for(@page) do |f| %>
+  <p>
+    <b>Title</b><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <b>Body</b><br />
+    <%= f.text_area :body %>
+  </p>
+
+  <p>
+    <b>Position</b><br />
+    <%= f.text_field :position %>
+  </p>
+
+  <p>
+    <b>Meta description</b><br />
+    <%= f.text_area :meta_description %>
+  </p>
+
+  <p>
+    <b>Meta keyword</b><br />
+    <%= f.text_area :meta_keyword %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @page %> |
+<%= link_to 'Back', pages_path %>

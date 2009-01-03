@@ -1,0 +1,12 @@
+<% @content_heading = "In Memorium #{@memorial.title}" %>
+<div class="memorial">
+	
+	<div class="article_img">
+		<%= image_tag(@memorial.photo.public_filename) if @memorial.photo %>
+	</div>
+	<p>In memoriam <%= @memorial.title %>...</p>
+  <%= @memorial.description %>
+
+
+
+</div>

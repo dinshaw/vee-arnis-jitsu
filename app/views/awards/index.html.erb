@@ -1,0 +1,16 @@
+<% @content_heading = "Awards &amp; Honors" %>
+
+<% for award in @awards %>
+
+<div class="award">
+    <% if !award.title.blank? %><h3><%=h award.title %></h3><% end %>
+	<div class="article_img">
+		<%= link_to (image_tag(award.photo.public_filename), award.url, :class => 'popup full') if award.photo %>
+	</div>
+    <%= award.description %>
+
+    <%=h award.date %>
+
+</div>
+<br class="clear" />
+<% end %>

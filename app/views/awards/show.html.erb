@@ -1,0 +1,29 @@
+<% @content_heading = @award.title %>
+<p>
+  <b>Title:</b>
+  <%=h @award.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @award.description %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%=h @award.url %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%=h @award.date %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%=h @award.position %>
+</p>
+
+
+<%= link_to 'Edit', edit_award_path(@award) %> |
+<%= link_to 'Back', awards_path %>

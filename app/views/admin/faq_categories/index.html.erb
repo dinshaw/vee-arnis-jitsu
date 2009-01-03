@@ -1,0 +1,26 @@
+<% @content_heading = "Listing faq_categories" %>
+
+<p><%= link_to 'New', new_admin_faq_category_path %></p>
+
+<table>
+	<thead>
+  <tr>
+    <th>Title</th>
+    <th>Parent</th>
+    <th>Questions</th>
+    <th>Position</th>
+  </tr>
+</thead>
+<tbody>
+<% for faq_category in @faq_categories %>
+  <tr class="<%= cycle "even", "odd" %>">
+    <td><%=h faq_category.title %></td>
+    <td><%=h faq_category.parent.title if !faq_category.parent.nil? %></td>
+    <td><%= link_to 'Questions', admin_faq_category_faqs_path(faq_category) %></td>
+    <td><%= position_links faq_category %></td>
+    <td><%= link_to 'Edit', edit_admin_faq_category_path(faq_category) %></td>
+    <td><%= link_to 'Destroy', admin_faq_category_path(faq_category), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>

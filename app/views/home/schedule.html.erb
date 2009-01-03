@@ -1,0 +1,98 @@
+<% @content_heading = "Manhattan Class Schedule" %>
+
+<ul class="facility">
+	<li>Fighthouse - 122 West 27th Street • 2nd Floor</li>
+	<li>(Between 6th &amp; 7th Avenue)</li>
+	<li>New York NY, 10001</li>
+</ul>
+<table class="weekly-schedule">
+	<thead>
+		<tr>
+			<th>Monday</th>
+			<th>Tuesday</th>
+			<th>Wednesday</th>
+			<th>Thursday</th>
+			<th>Friday</th>
+			<th>Saturday</th>
+		</tr>
+	</thead>
+	<tbody>
+			<% # whatever your schedule interval is goes here
+			0.upto(24) do |i|
+				# if any event in this interval print this row...
+				if @nyc_events.detect{|e| e.start_date.strftime("%H").to_f == i } 
+			%>
+				<tr>
+				<% %W(Monday Tuesday Wednesday Thursday Friday Saturday).each do |d|
+						if event = @nyc_schedule.events(Chronic.parse("#{d} #{i}:00")).first	%>	
+						
+							<td<%= " class=\"kids\"" if event.summary =~ /kid/i %>>
+								<%= event.details %>
+							</td>							
+					<% else %>
+						<td></td>
+					<% end %>	
+				<% end %>
+				
+				</tr>
+				<% end %>
+			<% end %>
+	</tbody>
+</table>
+
+<h2>Brooklyn Classes</h2>
+<ul class="facility">
+	<li>4202 Avenue U (off the corner of Flatbush)</li>
+	<li>Brooklyn, NY 11234</li>
+	<li>(718) 252-8944</li>
+</ul>
+
+<table class="weekly-schedule">
+	<thead>
+		<tr>
+			<th>Monday</th>
+			<th>Tuesday</th>
+			<th>Wednesday</th>
+			<th>Thursday</th>
+			<th>Friday</th>
+			<th>Saturday</th>
+		</tr>
+	</thead>
+	<tbody>
+			<% # whatever your schedule interval is goes here
+			0.upto(24) do |i|
+				# if any event in this interval print this row...
+				if @bklyn_events.detect{|e| e.start_date.strftime("%H").to_f == i } 
+			%>
+				<tr>
+				<% %W(Monday Tuesday Wednesday Thursday Friday Saturday).each do |d|
+						if event = @bklyn_schedule.events(Chronic.parse("#{d} #{i}:00")).first	%>	
+						
+							<td<%= " class=\"kids\"" if event.summary =~ /kid/i %>>
+								<%= event.details %>
+							</td>							
+					<% else %>
+						<td></td>
+					<% end %>	
+				<% end %>
+				
+				</tr>
+				<% end %>
+			<% end %>
+		</tbody>
+
+</table>
+
+<h2>Black Belt Classes</h2>
+<%=
+calendar(:year => @year, :month => @month) do |d| # This generates a simple calendar, but gives special days
+	if e = @bb_events.detect{|bbc| bbc.start_date.strftime("%Y-%m-%d") == d.to_s }          # (days that are in the array listOfSpecialDays) one CSS class,
+		[e.details_w_date, {:class => "specialDay"}]      # "specialDay", and gives the rest of the days another CSS class,
+	else                                      # "normalDay". You can also use this highlight today differently
+		[d.mday, {:class => "normalDay"}]       # from the rest of the days, etc.
+	end
+end
+%>
+
+
+

@@ -1,0 +1,23 @@
+<p>
+  <b>Stime:</b>
+  <%=h @ical_event.stime %>
+</p>
+
+<p>
+  <b>Etime:</b>
+  <%=h @ical_event.etime %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @ical_event.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @ical_event.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_ical_event_path(@ical_event) %> |
+<%= link_to 'Back', ical_events_path %>

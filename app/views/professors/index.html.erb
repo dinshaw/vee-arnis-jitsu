@@ -1,0 +1,18 @@
+<% @content_heading = "Professors" %>
+
+<% for professor in @professors %>
+  <div class="professor">
+    <% if !professor.name.blank? %><h4><%=h professor.name %></h4><% end %>
+    <% if !professor.title.blank? %><h4>"<%=h professor.title %>"</h4><% end %>
+
+	<div class="article_img <%= cycle('left','right') %>">
+		<%= image_tag(professor.photo.public_filename) if professor.photo %>
+	</div>
+	
+    <%= professor.description %>
+	
+
+	</div>
+	
+	<br class="clear" />
+<% end %>

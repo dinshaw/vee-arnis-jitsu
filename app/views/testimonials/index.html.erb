@@ -1,0 +1,12 @@
+<% @content_heading = "Testimonials" %>
+
+<% for testimonial in @testimonials %>
+<div class="testimonial">
+	<h4><%= link_to testimonial.title, testimonial %></h4>
+    <p><%= link_to testimonial.teaser, testimonial %></p>
+</div>
+
+<br class="clear" />
+
+<% end %>
+

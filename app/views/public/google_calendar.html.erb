@@ -1,0 +1,7 @@
+<%=
+calendar(:year => @year, :month => @month) do |d|
+	if event = @events.detect{|e| e.start_date == d}
+		["<span>#{d.mday}</span>#{event.summary}", {:class => "specialDay"}]
+	end
+end
+%>

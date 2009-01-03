@@ -1,0 +1,25 @@
+<% @content_heading = "Press" %>
+
+<% for article_category in @article_categories %>
+<div class="article">
+    <h3><%= article_category.title %></h3>
+	
+    <%= article_category.description %>
+  
+	
+	<% article_category.parent_articles.each do |a| %>
+		<div class="article">
+			<% if a.photo && a.photo.content_type == 'application/pdf' %>
+				<h4><%= link_to a.title, a.photo.public_filename %></h4>
+			<% else %>
+				<h4><%= link_to a.title, article_category_article_path(article_category,a) %></h4>
+			<% end %>
+
+		</div>
+	<% end %>
+	
+</div>
+
+<% end %>
+
+<br />

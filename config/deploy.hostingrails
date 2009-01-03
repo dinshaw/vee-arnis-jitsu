@@ -1,0 +1,19 @@
+set :application, "creditdesk1.com"            # Can be whatever you want, I use the project name from my SVN repository
+set :domain, "363cre.jerome.hostingrails.com"                # The URL for your app
+set :user, "creditd"                  # Your HostingRails username
+
+default_run_options[:pty] = true
+set :repository, "git@github.com:creditdesk/creditdesk.git"  # The repository location for git
+set :scm, :git
+set :branch, "master"
+
+set :use_sudo, false                	# HostingRails users don't have sudo access
+set :deploy_to, "/home/#{user}/#{application}"          # Where on the server your app will be deployed
+set :deploy_via, :checkout                # For this tutorial, svn checkout will be the deployment method
+set :rails_env, :production
+
+set :chmod755, "app config db lib public vendor script script/* public/disp*"  	# Some files that will need proper permissions
+
+role :app, domain
+role :web, domain
+role :db,  domain, :primary => true

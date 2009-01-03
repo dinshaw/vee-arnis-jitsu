@@ -1,0 +1,28 @@
+<% @content_heading = "Listing emails" %>
+
+<p><%= link_to 'New email', new_admin_email_path %></p>
+
+<table>
+	<thread>
+  <tr>
+    <th>Subject</th>
+    <th>Body</th>
+    <th>Delivered at</th>
+  </tr>
+</thread>
+<tbody>
+<% for email in @emails %>
+  <tr>
+    <td><%=h email.subject %></td>
+    <td><%= email.body %></td>
+    <td><%=h email.delivered_at %></td>
+    <td><%= link_to 'Show', admin_email_path(email) %></td>
+    <td><%= link_to 'Edit', edit_admin_email_path(email) %></td>
+    <td><%= link_to 'Destroy', admin_email_path(email), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+
+

@@ -1,0 +1,7 @@
+<% @content_heading = "In Memorium" %>
+
+<% for memorial in @memorials %>
+<div class="memorial">
+    <h4><%= link_to memorial.title, memorial %></h4>
+ </div>
+<% end %>

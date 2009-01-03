@@ -1,0 +1,30 @@
+<% @content_heading = "Listing select_options" %>
+
+<p><%= link_to 'New select_option', new_admin_select_option_path %></p>
+
+<table>
+	<thead>
+	  <tr>
+		<th>Display Name</th>
+	    <th>SelectOption Value</th>
+	    <th>Parent</th>
+	    <th>Position</th>
+	    <th>Description</th>
+	  </tr>
+	</thead>
+	<tbody>
+	<% @select_options.each do |select_option| %>
+	  <tr class="<%= cycle "even", "odd" %>">
+	    <td><%=h select_option.display_name %></td>
+		<td><%=h select_option.select_option_value %></td>	
+	    <td><%=h select_option.parent.display_name if !select_option.parent.nil? %></td>
+	    <td><%= link_to "Up", up_admin_select_option_path(select_option), :method => :put %> | <%= link_to "Down", down_admin_select_option_path(select_option), :method => :put %></td>
+	    <td><%= select_option.description %></td>
+	    <td><%= link_to 'Edit', edit_admin_select_option_path(select_option) %></td>
+	    <td><%= link_to 'Destroy', admin_select_option_path(select_option), :confirm => 'Are you sure?', :method => :delete %></td>
+	  </tr>
+	<% end %>
+	</tbody>
+</table>
+
+

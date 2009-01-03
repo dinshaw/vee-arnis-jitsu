@@ -1,0 +1,26 @@
+<h1>Listing ical_events</h1>
+
+<table>
+  <tr>
+    <th>Stime</th>
+    <th>Etime</th>
+    <th>Title</th>
+    <th>Body</th>
+  </tr>
+
+<% for ical_event in @ical_events %>
+  <tr>
+    <td><%=h ical_event.stime %></td>
+    <td><%=h ical_event.etime %></td>
+    <td><%=h ical_event.title %></td>
+    <td><%=h ical_event.body %></td>
+    <td><%= link_to 'Show', ical_event %></td>
+    <td><%= link_to 'Edit', edit_ical_event_path(ical_event) %></td>
+    <td><%= link_to 'Destroy', ical_event, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New ical_event', new_ical_event_path %>

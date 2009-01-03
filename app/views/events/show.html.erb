@@ -1,0 +1,16 @@
+<% @content_heading = "Event details for: #{@event.title}" %>
+<div id="event">
+	<h3><%= @event.title %> <%= "(Weekly)" if @event.is_weekly_class %></h3>
+	<%=markdown @event.description %> 
+
+  <%=h @event.start.strftime("%a, %b %e %Y at %I:%M%p") %>
+
+</div>
+
+
+<% if logged_in? %>
+<div id="tool_bar">
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
+</div>
+<% end %>

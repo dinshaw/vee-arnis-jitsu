@@ -1,0 +1,2 @@
+<%= @cms_page.body rescue nil %>
+<%= render :partial => "cms_pages/#{@cms_page.reference_string}" rescue nil %>

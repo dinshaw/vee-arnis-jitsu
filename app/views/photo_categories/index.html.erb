@@ -1,0 +1,12 @@
+<% @content_heading = "Photo Categories" %>
+
+<% for photo_category in @photo_categories %>
+<div class="program left">
+	<div class="article_img">
+		<div><%= link_to image_tag(photo_category.photo.public_filename(:thumb)),  photo_category_photos_path(photo_category) if photo_category.photo %></div>
+		<%= photo_category.photos.length > 0 ? link_to(photo_category.title, photo_category_photos_path(photo_category)) : photo_category.title %>
+		<%= photo_category.description %>
+	</div>
+
+</div>
+<% end %>

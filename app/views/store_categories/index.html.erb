@@ -1,0 +1,10 @@
+<% @content_heading = "Store Categories" %>
+
+<% for store_category in @store_categories %>
+<div class="program left">
+	<div class="article_img">
+		<%= store_category.products.length > 0 ? link_to(store_category.title, store_category_products_path(store_category)) : store_category.title %>
+	</div>
+
+</div>
+<% end %>

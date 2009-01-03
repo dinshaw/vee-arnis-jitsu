@@ -1,0 +1,12 @@
+<% @content_heading =  "#{@testimonial.title}"  %> 
+	
+<div id='testimonial'>
+	<h3><%= @testimonial.teaser %></h3>
+	<%= @testimonial.description %>
+</div>
+
+
+<div id="tool_bar">
+<% if logged_in? %><%= link_to 'Edit', edit_testimonial_path(@testimonial) %> | <% end %>
+<%= link_to 'Back', testimonials_path %>
+</div>

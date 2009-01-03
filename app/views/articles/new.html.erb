@@ -1,0 +1,46 @@
+<% @content_heading = "New Article for: #{@article_category.title}" %>
+
+<%= error_messages_for :article %>
+
+<% form_for([@article_category,@article], :html => { :multipart => true }) do |f| %>
+<p>
+  <b>Parent Article (for multiple photo articles)</b><br />
+  <%= f.collection_select :parent_id, Article.find(:all, :conditions => "parent_id is null"), :id, :title, :prompt => "Choose One..." %>
+</p>
+
+  <p>
+    <b>Title</b><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <b>Published on</b><br />
+    <%= f.date_select :published_on, :start_year => 1980 %>
+  </p>
+
+  <p>
+    <b>Body</b><br />
+    <%= f.text_area :body %>
+  </p>
+
+  <p>
+    <b>Published in</b><br />
+    <%= f.text_field :published_in %>
+  </p>
+  
+	<p>
+    <b>Published By</b><br />
+    <%= f.text_field :published_by %>
+  </p>
+
+  <p>
+    <b>Photo (or PDF)</b><br />
+    <%= f.file_field :uploaded_photo_data %>
+  </p>
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', article_category_articles_path %>

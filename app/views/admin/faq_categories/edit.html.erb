@@ -1,0 +1,20 @@
+<% @content_heading = "Editing faq_category" %>
+<p><%= link_to 'Show', admin_faq_category_path(@faq_category) %> | <%= link_to 'Back', admin_faq_categories_path %></p>
+<% form_for([:admin,@faq_category]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :parent_id %><br />
+    <%= f.collection_select :parent_id, FaqCategory.all, :id, :title, :include_blank => "Choose..." %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+

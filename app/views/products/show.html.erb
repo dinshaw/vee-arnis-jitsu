@@ -1,0 +1,80 @@
+<% @content_heading = @product.title %>
+<div id="photo">
+<%= render :partial => "videos/flash_player", :locals => {:video => @product.video} if !@product.video.nil?%>
+<div class="article_img"><%= image_tag(@product.photo.public_filename)  if !@product.photo.nil?%></div>
+<p><%= number_to_currency @product.price %></p>
+<div class="description"><%= @product.description %></div>
+
+<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" name="<%= @product.shipping_code %>paypalform" onsubmit="return <%= @product.shipping_code %>checkFields(this)">
+		
+		<% if @product.store_category.title == "Membership" %>
+			<!-- only show phone for memberships -->
+			<input name="on0" value="Phone Number" type="hidden">
+			<p>Phone Number:&nbsp;&nbsp;<input name="os0" maxlength="12" type="text"></p>	
+
+			<%  
+			# switch on the shuipping code to see if this is a membership and if it is revolving
+			case @product.shipping_code
+				# when sigle payment
+				when /mm|ym/ %>
+				<input type="hidden" name="cmd" value="_cart" />
+				<input type="hidden" name="amount" value="<%= @product.price %>" />
+				
+			<%	when /mr/ 
+			# revolves monthly
+			# if it is revolving set a flag
+				@revolving = true	%>
+
+				<input name="a3" value="<%= @product.price %>" type="hidden">
+				<input name="t3" value="M" type="hidden">
+				<input name="src" value="1" type="hidden">
+				<input name="sra" value="1" type="hidden">
+				<input type="hidden" name="cmd" value="_xclick-subscriptions" />
+			<%	when /yr/ 	
+			# revolves yearly
+				# if it is revolving set a flag
+				@revolving = true	%>
+				<input name="a3" value="140.00" type="hidden">
+				<input name="t3" value="Y" type="hidden">
+				<input name="src" value="1" type="hidden">
+				<input name="sra" value="1" type="hidden">				
+				<input type="hidden" name="cmd" value="_xclick-subscriptions" />				
+			<% end %>
+			
+			<% if @revolving %>
+				<%  case @product.shipping_code
+					when /1/ %>
+					<input name="p3" value="1" type="hidden">
+				<%	when /3/ %>
+					<input name="p3" value="3" type="hidden">
+				<%	when /6/ %>
+					<input name="p3" value="6" type="hidden">
+				<% end %>
+			<% end %>
+			
+		<% else %>
+			<!-- only show shipping for non-membership products -->
+			<p>Shipping to: 
+			<select name="<%= @product.shipping_code %>shipping" onChange="<%= @product.shipping_code %>updateshipping()">
+			<option value="" selected>Select Your Shipping Destination</option>
+			<option value="us">U.S.A.</option>
+			<option value="other">Other</option>
+			</select></p>			
+			<input type="hidden" name="shipping" value="0.00" />
+			<input type="hidden" name="shipping2" value="0.00" />
+			<input type="hidden" name="amount" value="<%= @product.price %>" />
+			<input type="hidden" name="cmd" value="_cart" />
+		<% end %>
+		
+		<p><input type="image" src="https://www.paypal.com/en_US/i/btn/x-click-but22.gif" border="0" name="submit" alt="Click to purchase <%= @product.title %>" title="Click to purchase <%= @product.title %>" /></p>
+
+		<input type="hidden" name="add" value="1" />
+		<input type="hidden" name="business" value="onlineorders@veearnisjitsu.com" />
+		<input type="hidden" name="item_name" value="<%= @product.title %> <%= @product.sub_title %>" />
+		<input type="hidden" name="page_style" value="VAJ" />
+		<input type="hidden" name="return" value="http://www.veearnisjitsu.com" />
+		<input type="hidden" name="no_note" value="1" />
+		<input type="hidden" name="currency_code" value="USD" />
+		</form>
+
+</div>

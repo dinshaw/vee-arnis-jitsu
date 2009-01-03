@@ -1,0 +1,10 @@
+<% if article.description.blank? && !article.photo.nil? %>
+	<div class="article_img"><%= image_tag(article.photo.public_filename(:full)) %></div>
+<% else %>
+	<div class="article_img <%= cycle('right','left') %>">
+		<%= image_tag(article.photo.public_filename(:article)) if article.photo %>
+	</div>
+	<%= article.description %>
+<% end %>
+
+

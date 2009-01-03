@@ -1,0 +1,13 @@
+<p><%= link_to 'Edit', edit_admin_faq_category_faq_path(@faq_category, @faq) %> | <%= link_to 'Back', admin_faq_category_faqs_path(@faq_category) %></p>
+<p>
+  <b>Question:</b>
+  <%=h @faq.question %>
+</p>
+
+<p>
+  <b>Answer:</b>
+  <%= @faq.answer %>
+</p>
+
+
+

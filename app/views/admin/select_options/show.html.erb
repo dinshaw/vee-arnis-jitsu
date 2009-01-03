@@ -1,0 +1,28 @@
+<p>
+  <b>Display:</b>
+  <%=h @select_option.display %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%=h @select_option.value %>
+</p>
+
+<p>
+  <b>Parent:</b>
+  <%=h @select_option.parent_id %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%=h @select_option.position %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @select_option.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_select_option_path(@select_option) %> |
+<%= link_to 'Back', admin_select_options_path %>

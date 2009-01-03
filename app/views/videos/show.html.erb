@@ -1,0 +1,20 @@
+<% @content_heading = @video.title %>
+
+<div id="vaj_player">
+		
+<%= render :partial => "videos/flash_player", :locals => {:video => @video} %>
+
+<%= @video.description %>
+
+</div>
+<% if logged_in? %>
+<div id="tool_bar">
+<%= link_to 'Edit', edit_video_category_video_path(@video_category,@video) %> |
+<%= link_to "Back toVideos for: #{@video_category.title}", video_category_videos_path(@video_category) %>
+
+
+
+
+
+</div>
+<% end %>

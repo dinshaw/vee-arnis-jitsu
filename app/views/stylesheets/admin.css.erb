@@ -1,0 +1,26 @@
+body{
+	background-color:<%= @bg_color %>
+}
+
+#canvas{
+}
+
+#admin_content{
+	margin-left:<%= @left_nav_width + @left_nav_right_margin %>px;	
+	background-color:<%= @admin_content_bg %>;
+	color:<%= @text_main %>;
+	border:1px solid <%= @text_main %>;
+	padding:20px;
+}
+
+#admin_content img.thumb{
+	border:1px solid <%= @text_main %>;
+}
+
+#admin_content h1{
+	font-size:2em;
+	font-weight:normal;
+	margin:0;
+	border:1px solid <%= @text_main %>;
+	border-width:0 0 1px 0;
+}

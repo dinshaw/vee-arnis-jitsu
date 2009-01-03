@@ -1,0 +1,32 @@
+<% @content_heading = "New Video for: #{@video_category.title}" %>
+
+<%= error_messages_for :video %>
+
+<% form_for(:video, :url => video_category_videos_path(@video_category)) do |f| %>
+
+  <p>
+    <b>Title</b><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <b>Description</b><br />
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <b>File Name</b><br />
+    <%= f.text_field :file_path %>
+  </p>
+
+  <p>
+    <b>Parent</b><br />
+    <%= f.collection_select :parent_id, Video.find(:all), :id, :title %>
+  </p>
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', videos_path %>

@@ -1,0 +1,9 @@
+setup :fixtures => :all
+open '/'
+assert_title 'Dinshaw Design & Development - Rails Code Base'
+open '/login' 
+type 'login', 'name'
+type 'password', 'password'
+click_and_wait 'commit'
+assert_text('flash', 'Couldn\'t log you in as \'name\'')
+

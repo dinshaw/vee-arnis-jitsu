@@ -1,0 +1,7 @@
+<div id="nav-user">
+	<% if logged_in? -%>
+			<p>Logged in as <%= link_to_current_user :content_method => :login %> | <%= "#{link_to("Admin Area", admin_path, { :title => "To Admin Area" })} | " if current_user.has_role?("Superuser") %><%= link_to "Log out", logout_path, { :title => "Log out" } %></p>
+	<% else -%>
+		<p><%= link_to_login_with_IP 'Not logged in', :style => 'border: none;' %> | <%= link_to "Log in",  login_path,  { :title => "Log in" } %> | <%= link_to "Sign up", signup_path, { :title => "Create an account" } %></p>
+	<% end -%>
+</div>

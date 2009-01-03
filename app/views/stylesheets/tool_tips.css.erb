@@ -1,0 +1,29 @@
+
+/* =ToolTip
+-----------------------------------------------------------------------------*/
+.tool_tip{
+	position:relative;
+}
+.tool_tip a,.tool_tip a img{
+	padding:0;
+	margin:0;
+}
+.tool_tip a:hover{
+	background-color:transparent;
+}
+.tool_tip .tip{
+	font-size:0.8em;
+	display:none;
+	position:absolute;
+	bottom:20px;
+	right:20px;	
+	width:20em;
+	padding:2px;
+}
+
+.tool_tip .tip_yellow, .tool_tip .tip_white{
+	background-color:<%= @yellow %>;
+	color:<%= @dark_red %>;
+	border:1px solid <%= @dark_red %>;
+}
+

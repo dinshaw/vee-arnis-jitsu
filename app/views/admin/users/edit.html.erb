@@ -1,0 +1,23 @@
+<% @content_heading = "Editing user" %>
+
+<%= error_messages_for :user %>
+
+<% form_tag "/admin/users/update/#{@user.id}" do %>
+
+  <p>
+    <b>Status</b><br />
+    <%= select :user, :state, User.aasm_states.collect{|s| s.for_select} %>
+  </p>
+
+  <p>
+    <b>Roles</b><br />
+    <%= collection_select :user, :role_ids, Role.find(:all), :id, :name, {},{:multiple => true} %>
+  </p>
+
+
+  <p>
+    <%= submit_tag "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', admin_users_path %>

@@ -1,0 +1,43 @@
+== Dinshaw Design & Development Rails base
+
+This is the base I use for all my rails projects.
+
+It has all my favorite plugins that I always use plus some others including:
+
+Implemented Restful_authentication with email as username and role_requirement wit Rspecs passing and: 
+action_mailer_tls
+active_merchant
+acts_as_list
+acts_as_tree
+attachment_fu
+auto_complete
+calendar_helper
+custom-err-msg
+dynamic_session_exp
+exception_notification
+friendly_id
+geokit
+googlecalendar
+restful_authentication
+role_requirement
+rspec
+rspec_on_rails
+ssl_requirement
+thinking-sphinx
+userstamp
+validates_email_veracity_of
+
+It has an admin area set up at /admin
+The login is admin@example.co:adminadmin
+
+In the admin area is management for 
+User management
+CMS pages
+	Add Title, Content Heading, Content-Sub-Title, Page text, metatag description, and metatag keywords to any page. See applicaiton.rb and application_helper.rb for methods.
+Options
+	managed select lists
+A bunch of other stuff too. See admin.html.erb for menu items to working stuff.
+
+See application.rb for some light as well.
+
+Hope is saves someone some time. Feel free to send a pull request if you add something cool

@@ -1,0 +1,8 @@
+<% @content_heading = "#{@article_category.title}" %>
+<% for article in @articles %>
+<div class="article">
+  	<h3><%=h article.title %></h3>
+    <%=h article.published_at %>  <%=h article.published_in %>
+    <%= markdown article.body %>
+</div>
+<% end %>

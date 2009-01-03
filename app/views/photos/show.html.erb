@@ -1,0 +1,6 @@
+<% @content_heading = @photo.title %>
+<div id="photo">
+<%= image_tag(@photo.photo.public_filename) %>
+
+<%= @photo.caption %>
+</div>

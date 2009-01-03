@@ -1,0 +1,28 @@
+<p>
+  <b>Title:</b>
+  <%=h @page.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @page.body %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%=h @page.position %>
+</p>
+
+<p>
+  <b>Meta description:</b>
+  <%=h @page.meta_description %>
+</p>
+
+<p>
+  <b>Meta keyword:</b>
+  <%=h @page.meta_keyword %>
+</p>
+
+
+<%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Back', pages_path %>

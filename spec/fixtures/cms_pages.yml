@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+home:
+  reference_string: Home
+  title: Home Title
+  sub_title: Sub title
+  body: Body text
+  meta_keywords: Meta Keywords
+  meta_description: Meta Description
+  position: 1
+  
+about:
+  reference_string: About
+  title: Title
+  sub_title: Sub title
+  body: Body text
+  meta_keywords: Keywords
+  meta_description: Meta Description
+  position: 2
+  

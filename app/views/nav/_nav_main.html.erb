@@ -1,0 +1,24 @@
+<div id="nav_main">
+	<ul>
+		<li><%= link_to "Home", root_path %></li>
+
+		<% if @cms_page_nav %>
+			<% @cms_page_nav.each do |cms_page| %>
+				<% if cms_page.children && (@cms_page == cms_page || @cms_page.parent == cms_page) %>
+					<li class="parent"><%= link_to cms_page.nav_text, cms_page %>
+						<ul>
+							<% cms_page.children.each do |child| %>
+								<li><%= link_to child.nav_text, child %></li>
+							<% end %>
+						</ul>
+					</li>
+				<% else %>
+					<li><%= link_to cms_page.nav_text, cms_page %></li>
+				<% end %>
+			<% end %>
+		<% end %>
+	
+		<li><%= link_to "Sign up", signup_path %></li>
+	</ul>
+	<br class="clear" />
+</div>

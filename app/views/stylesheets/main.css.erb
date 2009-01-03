@@ -1,0 +1,168 @@
+/*-----------------------------------------------------------------------------
+SITE_NAME DDD Template
+
+version:   1.0
+author:    Dinshaw Gobhai
+email:     info@dinshawdesign.com
+website:   http://www.dinshawdesign.com/
+-----------------------------------------------------------------------------*/
+
+/* =General
+-----------------------------------------------------------------------------*/
+
+
+/* Class for clearing floats */
+.clear {clear:both;}
+
+.left{
+	float:left;
+	margin-right:5px;
+}
+
+.right{
+	float:right;
+	margin-left:5px;
+}
+
+/* =Headings
+-----------------------------------------------------------------------------*/
+h2{
+	padding-bottom:25px;
+	text-align:center;
+	background:url(/images/yellow_grad_tile.gif) top left repeat-x;
+	font-size:20px;
+	font-style:italic;
+	font-weight:normal;
+	color:<%= @red %>;
+	clear:both;
+}
+
+h3,h4 {font-style:italic;}
+h3{
+	font-size:1em;
+	margin-bottom:5px;
+	border-bottom:1px solid #000;
+}
+
+.title_note{
+	font-weight:normal;
+	font-size:0.6em;
+}
+
+
+/* =Links
+-----------------------------------------------------------------------------*/
+a{color:<%= @red %>;}
+
+
+/* =Lists
+-----------------------------------------------------------------------------*/
+#nav_main ul{list-style:none;}
+
+
+
+/* =Branding
+-----------------------------------------------------------------------------*/
+#masthead {
+	background:#000 url(/images/branding/vaj-patches.gif) 50% no-repeat; 
+	padding:20px 0;	color:#fff; text-align:center;
+}
+
+
+/* =Main Content
+-----------------------------------------------------------------------------*/
+p.copy {text-indent:1em;}
+.article_img{text-align:center;}
+.article_img img{border:1px solid #000;}
+
+.youtube{text-align:center;margin-bottom:20px; border:1px solid #000;}
+
+
+.professor h4{
+	color:<%= @red %>;
+	text-align:center;
+	margin-bottom:10px;
+	}
+.facility, .testimonial, .memorial, .award{
+	list-style:none;
+	text-align:center;
+	margin-bottom:20px;
+}
+
+.facility .title{
+	font-weight:bold;
+}
+
+.link, .program, .video, .article, .event, .news_item, .upcoming_event{margin-bottom:20px;}
+.facility p, .program p, .system p, .video p, #testimonial p, #article p, .link p, .professor p, #event p, #news_full p, #photo p{
+	margin-bottom:10px;
+	text-indent:1em;
+}
+
+#photo{text-align:center;}
+.product p{
+	text-align:left;
+}
+#news, #upcoming_events, #feeds {margin:0 10px;}
+#news h5, #upcoming_events h5{text-transform:uppercase;}
+#news p, #upcoming_events p{font-size:0.7em;}
+#news p span, #upcoming_events p span{float:left;}
+.news_item, .upcoming_event{border-bottom:1px solid #000;}
+#feeds{margin-top:50px;}
+.feed{margin-bottom:10px;}
+#feeds a{font-size:0.7em;	}
+
+#article ul{margin:0 0 10px 0;padding:0;text-align:center;list-style:none;font-size:12px;}
+
+#vaj_player{text-align:center;width:450px;margin:auto;}
+
+div.description p,div.description li{
+	text-align:left;
+	text-indent:0;
+}
+div.description ul{
+	margin-bottom:10px;
+	font-weight:bold;
+}
+
+/* =Home
+-----------------------------------------------------------------------------*/
+.photo {text-align:center;float:left;margin:10px 10px 0 0;width:100px;overflow:hidden;}
+.photo img{border:1px solid #000;}
+.product_sm {width:200px;text-align:center;}
+/* =Secondary Content
+-----------------------------------------------------------------------------*/
+#tool_bar{clear:both;padding-top:20px;}
+
+
+/* =Footer
+-----------------------------------------------------------------------------*/
+#site_info{
+	background-color:#000;
+	text-align:center;
+	font-size:12px;
+	line-height:12px;
+	color:#fff;
+	padding:10px 0;
+}
+#site_info p{width:500px;margin:auto;padding:5px;}
+
+#ribbon{
+	width:150px;
+	text-align:center;
+	color:<%= @dark_grey %>;
+	position:relative;
+	bottom:0px;
+}
+
+
+
+/* =Misc 1
+-----------------------------------------------------------------------------*/
+#store_policy{
+	margin-top:30px;
+	font-size:0.85em;
+}
+#store_policy h4{
+	margin-top:10px;
+}

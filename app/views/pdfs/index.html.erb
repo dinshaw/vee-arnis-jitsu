@@ -1,0 +1,19 @@
+<h1>Listing pdfs</h1>
+
+<table>
+  <tr>
+    <th>Uploaded data</th>
+  </tr>
+
+<% for pdf in @pdfs %>
+  <tr>
+    <td><%=h pdf.uploaded_data %></td>
+    <td><%= link_to 'Show', pdf %></td>
+    <td><%= link_to 'Edit', edit_pdf_path(pdf) %></td>
+    <td><%= link_to 'Destroy', pdf, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+
+<br />
+
+<%= link_to 'New pdf', new_pdf_path %>

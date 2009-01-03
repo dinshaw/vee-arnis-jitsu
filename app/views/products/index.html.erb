@@ -1,0 +1,33 @@
+<% @content_heading = @category.title %>
+		<%= @category.description %>
+<% @category.products.each_with_index do |product,i| %>
+	<div class="photo product_sm">
+		<div class="article_img"><%= link_to image_tag(product.photo.public_filename(:thumb)), store_category_product_path(@category,product) if !product.photo.nil?%></div>
+			
+		<p><%= link_to  product.title, store_category_product_path(@category,product) %></p>
+		<p><%= link_to  product.sub_title, store_category_product_path(@category,product) if !product.sub_title.blank?%></p>
+		<p><%= number_to_currency product.price %></p>
+
+	</div>
+	<%= "<br class=\"clear\">" if (i+1)%2==0%>
+<% end %>
+
+<br class="clear" />
+<div id="store_policy">
+<h4>*Shipping &amp; Handling Charges:</h4>
+<p>Inside the U.S., $3.50 for each tape. Outside the U.S., $7.00 for each tape.</p>
+
+
+<h4>**DVD Format:</h4>
+<p>All of our DVD's are in the DVD-R format. Please make sure that your DVD player can play the DVD-R format!</p>
+
+
+<h4>Return Policy On All Tapes:</h4>
+<p>Defective Or Damaged Merchandise Only</p>
+
+
+<p>*Please note: You will receive an email confirmation when your order is shipped.</p>
+
+
+
+</div>

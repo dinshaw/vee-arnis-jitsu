@@ -1,0 +1,22 @@
+<% @content_heading = "Listing config Values" %>
+<p><%= link_to 'New config Value', new_admin_config_value_path %></p>
+<table>
+	<thead>
+  <tr>
+    <th>Name</th>
+    <th>Value</th>
+    <th>Sys var</th>
+  </tr>
+</thead>
+<tbody>
+<% @config_values.each do |config_value| %>
+  <tr class="<%= cycle "even", "odd" %>">
+    <td><%=h config_value.name %></td>
+    <td><%=h config_value.value %></td>
+    <td><%=h is(config_value.sys_var) %></td>
+    <td><%= link_to 'Edit', edit_admin_config_value_path(config_value) %></td>
+    <td><%= link_to 'Destroy', admin_config_value_path(config_value), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>

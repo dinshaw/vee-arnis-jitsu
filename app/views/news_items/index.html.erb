@@ -1,0 +1,9 @@
+<% @content_heading = "News" %>
+
+<% for news_item in @news_items %>
+<div class="news_item">
+    <h3><%=h news_item.title %> - <%=h news_item.date.strftime("%x") %></h3>
+    <%= news_item.description %>
+
+</div>
+<% end %>

@@ -1,0 +1,36 @@
+<% @content_heading = "New Award" %>
+
+<%= error_messages_for :award %>
+
+<% form_for(@award, :html => { :multipart => true }) do |f| %>
+  <p>
+    <b>Title</b><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <b>Description</b><br />
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <b>Url</b><br />
+    <%= f.text_field :url %>
+  </p>
+
+  <p>
+    <b>Date</b><br />
+    <%= f.date_select :date %>
+  </p>
+
+  <p>
+   	<%= label :award, :photo %>
+    <%= f.file_field :uploaded_photo_data %>
+  </p>
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', awards_path %>

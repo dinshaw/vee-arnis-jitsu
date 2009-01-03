@@ -1,0 +1,8 @@
+<% @content_heading = @video_category.title %>
+
+<% for video in @video_category.videos %>
+<div class="video">
+	<h4><%= link_to video.title, video_category_video_path(@video_category,video) %></h4>
+	<%= video.description %>
+</div>
+<% end %>

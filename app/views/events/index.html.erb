@@ -1,0 +1,19 @@
+<% @content_heading = "Events" %>
+
+
+<% for event in @events %>
+<div class='event'>
+    <h3><%= link_to event.title, event %></h4>
+	<p><%=h event.starts_at.strftime("%a, %b %e %Y at %I:%M%p") %></p>
+	<%= event.description %>
+</div>
+<% end %>
+
+<h2>Past Events</h2>
+<% for event in @past_events %>
+<div class='event'>
+    <h3><%= link_to event.title, event %></h4>
+	<p><%=h event.starts_at.strftime("%a, %b %e %Y at %I:%M%p") %></p>		
+		<%= event.description %>
+</div>
+<% end %>

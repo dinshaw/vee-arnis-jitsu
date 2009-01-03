@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (GAppsProvisioning::Connection)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File connection.rb, line 23</span>
+                <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">host</span>, <span class="ruby-identifier">port</span>, <span class="ruby-identifier">proxy</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">proxy_port</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">proxy_user</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">proxy_passwd</span>=<span class="ruby-keyword kw">nil</span>)
+                        <span class="ruby-identifier">conn</span> = <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">host</span>, <span class="ruby-identifier">port</span>, <span class="ruby-identifier">proxy</span>, <span class="ruby-identifier">proxy_port</span>, <span class="ruby-identifier">proxy_user</span>, <span class="ruby-identifier">proxy_passwd</span>)
+                        <span class="ruby-identifier">conn</span>.<span class="ruby-identifier">use_ssl</span> = <span class="ruby-keyword kw">true</span>
+                        <span class="ruby-comment cmt">#conn.enable_post_connection_check=  true</span>
+                        <span class="ruby-identifier">conn</span>.<span class="ruby-identifier">verify_mode</span> = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SSL</span><span class="ruby-operator">::</span><span class="ruby-constant">VERIFY_PEER</span>
+                        <span class="ruby-comment cmt">#conn.verify_mode = OpenSSL::SSL::VERIFY_NONE </span>
+                        <span class="ruby-comment cmt"># uncomment the previous line at your own risk : the certificate won't be verified !</span>
+                        <span class="ruby-identifier">store</span> = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">X509</span><span class="ruby-operator">::</span><span class="ruby-constant">Store</span>.<span class="ruby-identifier">new</span>
+                        <span class="ruby-identifier">store</span>.<span class="ruby-identifier">set_default_paths</span>
+                        <span class="ruby-identifier">conn</span>.<span class="ruby-identifier">cert_store</span> = <span class="ruby-identifier">store</span>
+                        <span class="ruby-identifier">conn</span>.<span class="ruby-identifier">start</span>
+                        <span class="ruby-ivar">@http_connection</span> = <span class="ruby-identifier">conn</span>
+                <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

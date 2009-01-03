@@ -1,0 +1,16 @@
+<% @content_heading = @article.title %>
+<div id="article">
+
+<ul>
+<li><%=h @article.published_at.strftime("%b %e, %Y") %> in <strong><%=h @article.published_in %></strong></li>
+<% if !@article.published_by.blank? %><li>By <strong><%=h @article.published_by %></strong></li><% end %>
+</ul>
+
+<%= render :partial => "article", :locals => {:article => @article} %>
+
+<% @article.children.each do |child| %>
+	<%= render :partial => "article", :locals => {:article => child} %>
+<% end %>
+
+</div>
+

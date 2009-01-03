@@ -1,0 +1,32 @@
+<% @content_heading = "Welcome to VAJ" %>
+
+<div class="youtube">
+	<object type="application/x-shockwave-flash" data="http://www.youtube.com/v/9e8xNmi77PM&amp;autoplay=0" width="425" height="344" id="VideoPlayback">
+		<param name="movie" value="http://www.youtube.com/v/9e8xNmi77PM&amp;hl=en&amp;fs=1&amp;autoplay=0" />
+		<param name="allowScriptAcess" value="sameDomain" />
+		<param name="wmode" value="transparent" />
+		<param name="quality" value="best" />
+		<param name="bgcolor" value="#FFFFFF" />
+		<param name="scale" value="noScale" />
+		<param name="salign" value="TL" />
+		<param name="FlashVars" value="playerMode=embedded" />
+	</object>
+
+</div>
+
+<div class="article_img left">
+	<%= image_tag "profs/prof-vee.gif", :id => :prof_vee, :alt => "Professor Florendo M. Visitaciion" %>
+	<p>"Professor Vee"</p>
+	<p>Florendo M. Visitaciion</p>
+</div>
+<p class="copy">Vee Arni Jirsiu is a self defense system based in New York City. It comprises a number of arts including but not limited to Vee Jitsu, Arnis, Thai Boxing, Kuntao, and to a lesser extent Kung Fu, Judo, Aikido, and Wing Chun.</p>
+
+<br class="clear" />
+
+<div class="article_img right">
+	<%= image_tag "profs/djames1.gif", :id => :prof_james, :alt => "Professor David B. James" %>
+	<p>Professor David B. James</p>
+</div>
+
+<p class="copy">The system was created by Professor Florendo M. Visitacion, better known as "Professor Vee", and is led today by Professor David James. We strive to offer realistic self defense that anyone can learn in a short period of time. You can learn more about our system by viewing the different links on this page or you can stop by our headquarters and view a class. Please <%= link_to "contact us", "" %> for availability.</p>
+

@@ -1,0 +1,17 @@
+<% @content_heading = "New tag" %>
+
+<p><%= link_to 'Back', admin_tags_path %></p>
+
+<% form_for([:admin,@tag]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+

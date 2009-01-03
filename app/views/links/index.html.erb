@@ -1,0 +1,9 @@
+<% @content_heading = "Links" %>
+
+
+<% for link in @links %>
+<div class="link">
+	<h4><%= link_to link.title, link.url, :class => :new_window %></h4>
+	<%= link.description %>
+</div>
+<% end %>

@@ -1,0 +1,11 @@
+.DS_Store
+*.swp
+db/*.sqlite3
+log/*
+tmp
+config/database.yml
+config/*sphinx.conf
+db/sphinx
+db/schema.rb
+public/stylesheets
+public/attachments

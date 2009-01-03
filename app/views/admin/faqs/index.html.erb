@@ -1,0 +1,21 @@
+<%- @content_heading = "Listing faqs for #{@faq_category.title}" -%>
+<p><%= link_to 'New', new_admin_faq_category_faq_path(@faq_category) %></p>
+<table>
+	<thead>
+  <tr>
+    <th>Question</th>
+    <th>Position</th>
+  </tr>
+</thead>
+<tbody>
+<% for faq in @faqs %>
+  <tr class="<%= cycle "even", "odd" %>">
+    <td><%=h faq.question %></td>
+    <td><%= link_to "Up", up_admin_faq_category_faq_path(@faq_category, faq), :method => :put %> | <%= link_to "Down", down_admin_faq_category_faq_path(@faq_category, faq), :method => :put %></td>
+    <td><%= link_to 'Show', admin_faq_category_faq_path(@faq_category, faq) %></td>
+    <td><%= link_to 'Edit', edit_admin_faq_category_faq_path(@faq_category, faq) %></td>
+    <td><%= link_to 'Destroy', admin_faq_category_faq_path(@faq_category, faq), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>

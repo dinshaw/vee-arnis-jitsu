@@ -1,0 +1,11 @@
+<% @content_heading = "Video Categories" %>
+
+<% for video_category in @video_categories %>
+<div class="program left">
+	<div class="article_img">
+		<div><%= link_to image_tag(video_category.photo.public_filename(:thumb)),  video_category_videos_path(video_category) if video_category.photo %></div>
+		<%= link_to video_category.title, video_category_videos_path(video_category) %>
+		<%= video_category.description %>
+	</div>
+</div>
+<% end %>

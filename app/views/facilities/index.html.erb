@@ -1,0 +1,17 @@
+<% @content_heading = "Facilities" %>
+
+<% for facility in @facilities %>
+<ul class="facility">
+	<li class="title"><%=h facility.title %></li>
+	<li class="article_img">
+		<%= image_tag(facility.photo.public_filename) if facility.photo %>
+	</li>
+	
+	<li><%=h facility.address %></li>
+	<li><%=h facility.address2 %></li>
+	<li><%=h facility.city_state_zip %></li>
+	<% if !facility.phone.blank? %><li><%=h number_to_phone(facility.phone, :area_code => true) %></li><% end %>
+
+</ul>
+<% end %>
+

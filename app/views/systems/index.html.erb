@@ -1,0 +1,17 @@
+<% @content_heading = "The System" %>
+
+<% for system in @systems %>
+<div class="system">
+
+    <h3><%=h system.title %></h3>
+
+	<div class="article_img <%= cycle('right','left') %>">
+		<%= image_tag(system.photo.public_filename(:mid)) if system.photo %>
+	</div>
+	
+    <%= system.description %>
+</div>
+
+<br class="clear" />
+
+<% end %>
