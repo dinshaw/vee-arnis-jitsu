@@ -1,0 +1,148 @@
+--- !ruby/object:Gem::Specification 
+name: runt
+version: !ruby/object:Gem::Version 
+  version: 0.7.0
+platform: ruby
+authors: 
+- Matthew Lipper
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2008-06-29 00:00:00 -04:00
+default_executable: 
+dependencies: []
+
+description: Runt is a Ruby version of temporal patterns by Martin Fowler. Runt provides an API for scheduling recurring events using set-like semantics.
+email: mlipper@gmail.com
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- README
+- CHANGES
+- TODO
+- LICENSE.txt
+- doc/tutorial_te.rdoc
+- doc/tutorial_schedule.rdoc
+- doc/tutorial_sugar.rdoc
+files: 
+- setup.rb
+- LICENSE.txt
+- Rakefile
+- TODO
+- CHANGES
+- README
+- lib/runt/pdate.rb
+- lib/runt/dprecision.rb
+- lib/runt/temporalexpression.rb
+- lib/runt/daterange.rb
+- lib/runt/schedule.rb
+- lib/runt/sugar.rb
+- lib/runt/expressionbuilder.rb
+- lib/runt.rb
+- test/reweektest.rb
+- test/icalendartest.rb
+- test/everytetest.rb
+- test/combinedexpressionstest.rb
+- test/wimonthtest.rb
+- test/reyeartest.rb
+- test/runttest.rb
+- test/uniontest.rb
+- test/yeartetest.rb
+- test/daterangetest.rb
+- test/baseexpressiontest.rb
+- test/spectest.rb
+- test/collectiontest.rb
+- test/scheduletest.rb
+- test/pdatetest.rb
+- test/dprecisiontest.rb
+- test/intersecttest.rb
+- test/dimonthtest.rb
+- test/temporalexpressiontest.rb
+- test/redaytest.rb
+- test/diweektest.rb
+- test/difftest.rb
+- test/dayintervaltetest.rb
+- test/remonthtest.rb
+- test/rspectest.rb
+- test/aftertetest.rb
+- test/sugartest.rb
+- test/beforetetest.rb
+- test/expressionbuildertest.rb
+- examples/schedule_tutorial.rb
+- examples/schedule_tutorialtest.rb
+- examples/reminder.rb
+- examples/payment_report.rb
+- examples/payment_reporttest.rb
+- doc/tutorial_te.rdoc
+- doc/tutorial_schedule.rdoc
+- doc/tutorial_sugar.rdoc
+- site/blue-robot3.css
+- site/logohover.png
+- site/index.html
+- site/runt-logo.gif
+- site/runt-logo.psd
+- site/dcl-small.gif
+has_rdoc: true
+homepage: http://runt.rubyforge.org
+post_install_message: 
+rdoc_options: 
+- --main
+- README
+- --title
+- Runt
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+requirements: 
+- none
+rubyforge_project: runt
+rubygems_version: 1.3.1
+signing_key: 
+specification_version: 2
+summary: Ruby Temporal Expressions.
+test_files: 
+- test/reweektest.rb
+- test/icalendartest.rb
+- test/everytetest.rb
+- test/combinedexpressionstest.rb
+- test/wimonthtest.rb
+- test/reyeartest.rb
+- test/runttest.rb
+- test/uniontest.rb
+- test/yeartetest.rb
+- test/daterangetest.rb
+- test/baseexpressiontest.rb
+- test/spectest.rb
+- test/collectiontest.rb
+- test/scheduletest.rb
+- test/pdatetest.rb
+- test/dprecisiontest.rb
+- test/intersecttest.rb
+- test/dimonthtest.rb
+- test/temporalexpressiontest.rb
+- test/redaytest.rb
+- test/diweektest.rb
+- test/difftest.rb
+- test/dayintervaltetest.rb
+- test/remonthtest.rb
+- test/rspectest.rb
+- test/aftertetest.rb
+- test/sugartest.rb
+- test/beforetetest.rb
+- test/expressionbuildertest.rb
+- examples/schedule_tutorialtest.rb
+- examples/payment_reporttest.rb
