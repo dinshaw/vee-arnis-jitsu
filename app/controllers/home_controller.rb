@@ -1,6 +1,7 @@
 require 'icalendar'
 require 'open-uri'
 require 'runt'
+require 'chronic'
 class HomeController < ApplicationController
   include Runt
 
