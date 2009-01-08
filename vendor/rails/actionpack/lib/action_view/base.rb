@@ -49,12 +49,12 @@ module ActionView #:nodoc:
   # But you don't have to restrict yourself to static includes. Templates can share variables amongst themselves by using instance
   # variables defined using the regular embedding tags. Like this:
   #
-  #   <% @content_heading = "A Wonderful Hello" %>
+  #   <% @page_title = "A Wonderful Hello" %>
   #   <%= render "shared/header" %>
   #
-  # Now the header can pick up on the <tt>@content_heading</tt> variable and use it for outputting a title tag:
+  # Now the header can pick up on the <tt>@page_title</tt> variable and use it for outputting a title tag:
   #
-  #   <title><%= @content_heading %></title>
+  #   <title><%= @page_title %></title>
   #
   # == Passing local variables to sub templates
   #

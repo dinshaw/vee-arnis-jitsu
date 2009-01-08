@@ -29,7 +29,8 @@ set :scm, 'git'
 set :branch, "master"
 
 set :deploy_to, "/home/#{user}/#{application}"
-set :deploy_via, :remote_cache
+set :deploy_via, :checkout                # For this tutorial, svn checkout will be the deployment method
+set :rails_env, :production
 
 role :app, domain
 role :web, domain
