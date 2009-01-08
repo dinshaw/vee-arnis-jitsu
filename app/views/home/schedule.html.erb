@@ -87,7 +87,7 @@
 <%=
 calendar(:year => @year, :month => @month) do |d| # This generates a simple calendar, but gives special days
 	if e = @bb_events.detect{|bbc| bbc.start_date.strftime("%Y-%m-%d") == d.to_s }          # (days that are in the array listOfSpecialDays) one CSS class,
-		[e.details, {:class => "specialDay"}]      # "specialDay", and gives the rest of the days another CSS class,
+		[e.details_w_date, {:class => "specialDay"}]      # "specialDay", and gives the rest of the days another CSS class,
 	else                                      # "normalDay". You can also use this highlight today differently
 		[d.mday, {:class => "normalDay"}]       # from the rest of the days, etc.
 	end
