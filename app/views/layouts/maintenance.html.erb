@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta name="description" content="Vee Arnis Jitsu is a self defense system based in New York City. It comprises a number of arts including 
+	but not limited to Vee Jitsu, Arnis, Thai Boxing, Kuntao, and to a lesser extent Kung Fu, Judo, Aikido, Wing Chun." />
+	<meta name="keywords" content="vee arnis jitsu, vee arnis ju jitsu, vee, arnis, jitsu, ju jitsu, martial arts, fighting, self defense, 
+	training, self defense training, new york, new york city, new york state, manhatten, world trade center, 
+	twin towers, 9-11, vaj, video, videos, equipment, womans self defense, woman's self defense, childrens self defense, 
+	children's self defense, kickboxing, cardio kickboxing, street self defense, vee jitsu, knife, knives, sticks, 
+	professor vee, visitacion, professor visitacion, professor, professors, professor james, professor david james, 
+	david james, sensei, belts, balck belts, ground zero, wtc, grappleing, grappling, thai boxing, kunato, kung fu, 
+	judo, aikido, wing chun, boxing, system, headquarters, instructor, instructors, miragalotta shoot fighting, 
+	miragalotta, shoot fighting, shootfighting, financial district, church street, park place, Filipino martial arts, 
+	Filipino, Kuntaw, Chinese Kung fu, Chinese, Japanese Aikido, Japanese, Jiu Jitsu, joint locks, no holds barred" />
+
+	<title>Vee Arnis Jitsu School of Self Defense</title>
+
+	<%= javascript_include_tag 'application', "AC_RunActiveContent.js", 'dvdstorefunctions.js','membershipstorefunctions.js', 'popup' %>
+
+	<%= stylesheet_link_tag 'reset', 'layout', 'typography', 'main', 'nav', 'errors', 'center_layout','forms','tables','lists' %>
+
+</head>
+
+<body>
+
+	<div id="canvas">
+
+		<div id="masthead">
+			<%= image_tag "branding/veearnisjitsu.gif", :id => :right_patch %>
+			<p id="address">4202 Avenue U &amp; Flatbush Avenue Brooklyn NY 11234</p>
+			<p>(718) 252 - 8944</p>
+		</div>
+
+		<div id="nav_main">
+			<ul>
+				<li><%= link_to "The System", systems_path, :class => ("curr" if @controller.controller_name == "systems") %></li>
+				<li><%= link_to "Programs", programs_path, :class => ("curr" if @controller.controller_name == "programs")  %></li>
+				<li><%= link_to "Schedule", schedule_path, :class => ("curr" if @controller.action_name == "schedule")  %></li>
+				<li><%= link_to "Online Training", "http://www.veearnisjitsu.us", :target => "_blank"  %></li>				
+				<li><%= link_to "Store", store_categories_path %></li>
+			</ul>
+		</div>
+
+		<div id="container">
+			<div id="nav_sub">
+				<ul>
+					<li><%= link_to "Home", "/", :class => ("curr" if @controller.controller_name == "home") %></li>
+					<!-- <li><%= link_to "Online Training", "", :class => ("curr" if @controller.controller_name =~ /train/)  %></li> -->
+					<li><%= link_to "Photos", photo_categories_path, :class => ("curr" if @controller.controller_name =~ /photo/) %></li>
+					<li><%= link_to "Videos", video_categories_path, :class => ("curr" if @controller.controller_name =~ /video/) %></li>
+					<li><%= link_to "Press", article_categories_path, :class => ("curr" if @controller.controller_name =~ /article/) %></li>
+					<li><%= link_to "Events", events_path %></li>
+					<li><%= link_to "News", news_items_path %></li>
+					<li><%= link_to "Testimonials", testimonials_path, :class => ("curr" if @controller.controller_name =~ /testimonial/) %></li>
+					<li><%= link_to "In Memorium", memorials_path %></li>
+					<li><%= link_to "Awards &amp; Honors", awards_path %></li>
+					<li><%= link_to "Professors", professors_path %></li>
+					<li><%= link_to "Links", links_path, :class => ("curr" if @controller.controller_name =~ /links/) %></li>
+				</ul>	
+			</div>
+
+
+			<div id="content">
+
+				<div id="main_content">
+
+					<div id="content_spacer">
+							<h2>Maintenance Notice</h2>
+							<p>We're currently offline for <%= reason ? reason : "maintenance" %> as of <%= Time.now.strftime("%I:%M %p %Z") %>.</p>
+							<p>Sorry for the inconvenience. We'll be back <%= deadline ? "by #{deadline}" : "shortly" %>. Please <a href="mailto:admin@veearnisjitsu.com">e-mail us</a> if you need to get in touch. </p>
+
+					</div> <!-- content_spacer -->
+
+				</div> <!-- main_content -->
+
+				<div id="sidebar">
+	
+				</div> <!-- sidebar -->
+
+			</div> <!-- content -->
+
+
+			<div id="ribbon" class="clear">
+				<%= image_tag "/images/ribbon.gif" %>
+				<p>9.11.2001</p>
+			</div> <!-- ribbon -->
+
+			<br class="clear" />
+
+			<div id="site_info">
+				<p>The ONLY Vee Arnis Jitsu Website authorized by Professor Vee and Professor David James &copy; <%= Date.today.year %> Vee Arnis Jitsu. All rights reserved. <%= render :partial => 'shared/credit_links' %></p>
+			</div> <!-- site_info -->
+
+		</div> <!-- container -->
+
+	</div> <!-- canvas -->
+
+</body>
+</html>
