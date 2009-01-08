@@ -17,7 +17,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :ical_events
 
-  map.schedule '/schedule/:month', :controller => 'home', :action => 'schedule'
+  map.schedule '/schedule/:date', :controller => 'home', :action => 'schedule', :date => nil
   map.resources :news_items,:events,:professors, :awards, :memorials, :video_categories,:systems, :facilities, :programs, :links, :pages, :testimonials
 
   map.resources  :article_categories, :has_many => :articles

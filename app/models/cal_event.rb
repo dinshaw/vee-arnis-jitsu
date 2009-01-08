@@ -22,6 +22,9 @@ class CalEvent
 
   def initialize(ical_event)
     self.summary = ical_event.summary
+    p ical_event.summary
+    p ical_event.dtstart
+    p "--------"
     self.start_date = Chronic.parse(ical_event.dtstart.strftime("%x %H:%M"))
     self.end_date = Chronic.parse(ical_event.dtend.strftime("%x %H:%M"))
     self.description = ical_event.description

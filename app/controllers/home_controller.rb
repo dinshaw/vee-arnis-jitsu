@@ -10,23 +10,15 @@ class HomeController < ApplicationController
   end
 
   def schedule
-    case params[:month]
-    when "next"
-      @year = (Date.today + 1.month).year
-      @month = (Date.today + 1.month).month
-    when "last"
-      @year = (Date.today - 1.month).year
-      @month = (Date.today - 1.month).month
-    else
-      @year = Date.today.year
-      @month = Date.today.month
-    end
+    @date = !params[:date].blank? ? Chronic.parse(params[:date]) : Date.today
+    @year = @date.year
+    @month = @date.month
     
     nyc_calendars = Icalendar.parse(open(NYC_GOOGLE_CALENDAR_PUBLIC_ICAL))
     @nyc_schedule = Schedule.new
     @nyc_events = []
     nyc_calendars.first.events.each do |e|
-      if !e.recurrence_rules.first.nil?
+      if !e.recurrence_rules.first.nil?  
         new_nyc_event = CalEvent.new(e)
         @nyc_events << new_nyc_event
         @nyc_schedule.add(new_nyc_event, new_nyc_event.expression)
