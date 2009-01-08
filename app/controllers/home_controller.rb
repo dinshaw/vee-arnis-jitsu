@@ -10,9 +10,18 @@ class HomeController < ApplicationController
   end
 
   def schedule
-    @year = Date.today.year
-    @month = Date.today.month
-
+    case params[:month]
+    when "next"
+      @year = (Date.today + 1.month).year
+      @month = (Date.today + 1.month).month
+    when "last"
+      @year = (Date.today - 1.month).year
+      @month = (Date.today - 1.month).month
+    else
+      @year = Date.today.year
+      @month = Date.today.month
+    end
+    
     nyc_calendars = Icalendar.parse(open(NYC_GOOGLE_CALENDAR_PUBLIC_ICAL))
     @nyc_schedule = Schedule.new
     @nyc_events = []

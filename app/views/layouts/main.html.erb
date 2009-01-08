@@ -38,7 +38,7 @@
 			<ul>
 				<li><%= link_to "The System", systems_path, :class => ("curr" if @controller.controller_name == "systems") %></li>
 				<li><%= link_to "Programs", programs_path, :class => ("curr" if @controller.controller_name == "programs")  %></li>
-				<li><%= link_to "Schedule", schedule_path, :class => ("curr" if @controller.action_name == "schedule")  %></li>
+				<li><%= link_to "Schedule", schedule_path("today"), :class => ("curr" if @controller.action_name == "schedule")  %></li>
 				<li><%= link_to "Online Training", "http://www.veearnisjitsu.us", :target => "_blank"  %></li>				
 				<li><%= link_to "Store", store_categories_path %></li>
 			</ul>

@@ -93,6 +93,7 @@ calendar(:year => @year, :month => @month) do |d| # This generates a simple cale
 	end
 end
 %>
+<p><%= link_to "<< Last Moth", schedule_path("last") %> | <%= link_to "Next Moth >>", schedule_path("next") %></p>
 
 
 
