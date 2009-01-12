@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
 
   filter_parameter_logging :password, :password_hash, :password_salt, :email
 
-  # include SslRequirement
+  include SslRequirement
 
   skip_before_filter :ensure_proper_protocol # if ['development','test','staging'].include?(RAILS_ENV)
             
