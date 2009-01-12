@@ -1,0 +1,21 @@
+<% @content_heading = "Listing programs" %>
+<p><%= link_to 'New program', new_admin_program_path %></p>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Position</th>
+  </tr>
+
+<% for program in @programs %>
+  <tr>
+    <td><%=h program.title %></td>
+    <td><%= program.description %></td>
+    <td><%= position_links(program) %></td>
+    <td><%= link_to 'Show', admin_program_path(program) %></td>
+    <td><%= link_to 'Edit', edit_admin_program_path(program) %></td>
+    <td><%= link_to 'Destroy', admin_program_path(program), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+

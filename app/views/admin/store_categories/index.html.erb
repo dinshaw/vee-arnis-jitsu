@@ -1,0 +1,23 @@
+<% @content_heading = "Listing store_categories" %>
+<p><%= link_to 'New store_category', new_admin_store_category_path %></p>
+<table>
+	<thead>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
+<% for store_category in @store_categories %>
+  <tr class="<%= cycle "even", "odd" %>">
+    <td><%=h store_category.title %></td>
+    <td><%= store_category.description %></td>
+	<td><%= link_to 'Products', admin_store_category_products_path(store_category) %></td>
+    <td><%= position_links(store_category) %></td>	
+    <td><%= link_to 'Edit', edit_admin_store_category_path(store_category) %></td>
+    <td><%= link_to 'Destroy', admin_store_category_path(store_category), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+

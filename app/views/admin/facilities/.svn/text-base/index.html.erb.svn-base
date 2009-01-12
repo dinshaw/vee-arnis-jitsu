@@ -1,0 +1,31 @@
+<% @content_heading = "Listing facilities" %>
+<p><%= link_to 'New facility', new_admin_facility_path %></p>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Address</th>
+    <th>Address 2</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Phone</th>
+    <th>Position</th>
+  </tr>
+
+<% for facility in @facilities %>
+  <tr>
+    <td><%=h facility.title %></td>
+    <td><%=h facility.address %></td>
+    <td><%=h facility.address2 %></td>
+    <td><%=h facility.city %></td>
+    <td><%=h facility.state %></td>
+    <td><%=h facility.zip %></td>
+    <td><%=h facility.phone %></td>
+    <td><%= position_links(facility) %></td>
+    <td><%= link_to 'Show', admin_facility_path(facility) %></td>
+    <td><%= link_to 'Edit', edit_admin_facility_path(facility) %></td>
+    <td><%= link_to 'Destroy', admin_facility_path(facility), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+

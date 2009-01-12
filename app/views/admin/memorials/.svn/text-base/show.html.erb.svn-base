@@ -1,0 +1,18 @@
+<p><%= link_to 'Edit', edit_admin_memorial_path(@memorial) %> | <%= link_to 'Back', admin_memorials_path %></p>
+<p>
+  <b>Title:</b>
+  <%=h @memorial.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @memorial.description %>
+</p>
+
+<div class="article_img">
+	<%= image_tag(@memorial.photo.public_filename) if @memorial.photo %>
+</div>
+
+
+
+

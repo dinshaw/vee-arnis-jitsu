@@ -1,0 +1,23 @@
+<p><%= link_to 'Edit', edit_admin_photo_category_photo_path(@photo_category, @photo) %> | <%= link_to 'Back', admin_photo_category_photos_path %></p>
+<p>
+  <b>Title:</b>
+  <%=h @photo.title %>
+</p>
+
+<div class="article_img">
+	<%= image_tag(@photo.photo.public_filename) if @photo.photo %>
+</div>
+
+<p>
+  <b>Caption:</b>
+  <%= @photo.caption %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%=h @photo.url %>
+</p>
+
+
+
+

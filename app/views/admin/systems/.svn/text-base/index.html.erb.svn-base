@@ -1,0 +1,22 @@
+<% @content_heading = "Listing systems" %>
+<p><%= link_to 'New system', new_admin_system_path %></p>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+
+<% for system in @systems %>
+  <tr  class="<%= cycle "even", "odd" %>">
+    <td><%=h system.title %></td>
+    <td><%= system.description %></td>
+    <td><%= position_links(system) %></td>
+    <td><%= link_to 'Show', admin_system_path(system) %></td>
+    <td><%= link_to 'Edit', edit_admin_system_path(system) %></td>
+    <td><%= link_to 'Destroy', admin_system_path(system), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+
+

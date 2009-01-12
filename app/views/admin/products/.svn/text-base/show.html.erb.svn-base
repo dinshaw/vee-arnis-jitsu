@@ -1,0 +1,32 @@
+<p><%= link_to 'Edit', edit_admin_store_category_product_path(@category,@product) %> | <%= link_to 'Back', admin_store_category_products_path(@category) %></p>
+
+<p>
+  <b>Title:</b>
+  <%=h @product.title %>
+</p>
+
+<p>
+  <b>Sub-Title:</b>
+  <%=h @product.sub_title %>
+</p>
+
+<div class="article_img">
+	<%= image_tag(@product.photo.public_filename(:article)) if @product.photo %>
+</div>
+
+<p>
+  <b>Description:</b>
+  <%= @product.description %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%=h number_to_currency @product.price %>
+</p>
+
+<p>
+  <b>Shipping Code</b><br />
+  <%= @product.shipping_code %>
+</p>
+
+<%= render :partial => "videos/flash_player", :locals => {:video => @product.video} if !@product.video.nil?%>

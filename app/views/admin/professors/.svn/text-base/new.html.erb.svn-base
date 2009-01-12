@@ -1,0 +1,33 @@
+<% @content_heading = "New professor" %>
+<p><%= link_to 'Back', admin_professors_path %></p>
+<%= error_messages_for :professor %>
+
+<% form_for([:admin,@professor], :html => {:multipart => true}) do |f| %>
+
+<p>
+  <b>Name</b><br />
+  <%= f.text_field :name %>
+</p>
+
+  <p>
+    <b>Title</b><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <b>Description</b><br />
+    <%= f.text_area :description %>
+  </p>
+
+
+<p>
+	<b>Photo</b><br />
+	<%= f.file_field :uploaded_data_photo %>
+</p>
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+

@@ -1,0 +1,42 @@
+<p><%= link_to 'Edit', edit_admin_facility_path(@facility) %> | <%= link_to 'Back', admin_facilities_path %></p>
+
+<p>
+  <b>Title:</b>
+  <%=h @facility.title %>
+</p>
+
+<div class="article_img">
+	<%= image_tag(@facility.photo.public_filename) if @facility.photo %>
+</div>
+<p>
+  <b>Address:</b>
+  <%=h @facility.address %>
+</p>
+
+<p>
+  <b>Address2:</b>
+  <%=h @facility.address2 %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @facility.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%=h @facility.state %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%=h @facility.zip %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h @facility.phone %>
+</p>
+
+
+

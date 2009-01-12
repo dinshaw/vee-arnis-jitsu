@@ -1,0 +1,50 @@
+<% @content_heading = "New facility" %>
+<p><%= link_to 'Back', admin_facilities_path %></p>
+<%= error_messages_for :facility %>
+
+<% form_for([:admin,@facility], :html => {:multipart => true}) do |f| %>
+  <p>
+    <b>Title</b><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <b>Address</b><br />
+    <%= f.text_field :address %>
+  </p>
+
+  <p>
+    <b>Address 2</b><br />
+    <%= f.text_field :address2 %>
+  </p>
+
+  <p>
+    <b>City</b><br />
+    <%= f.text_field :city %>
+  </p>
+
+  <p>
+    <b>State</b><br />
+    <%= f.text_field :state %>
+  </p>
+
+  <p>
+    <b>Zip</b><br />
+    <%= f.text_field :zip %>
+  </p>
+
+  <p>
+    <b>Phone</b><br />
+    <%= f.text_field :phone %>
+  </p>
+<p>
+	<b>Photo</b><br />
+	<%= f.file_field :uploaded_data_photo %>
+</p>
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+

@@ -1,0 +1,25 @@
+<% @content_heading = "#{@video_category.title} videos" %>
+<p><%= link_to 'New video', new_admin_video_category_video_path %></p>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Video category</th>
+    <th>File path</th>
+  </tr>
+
+<% for video in @videos %>
+  <tr>
+    <td><%=h video.title %></td>
+    <td><%=h video.description %></td>
+    <td><%=h video.parent_id %></td>
+    <td><%=h video.file_path %></td>
+    <td><%= link_to 'Up', up_admin_video_category_video_path(@video_category,video), :method => :put %> | <%= link_to 'Down', down_admin_video_category_video_path(@video_category,video), :method => :put %></td>
+    <td><%= link_to 'Show', admin_video_category_video_path(@video_category,video) %></td>
+    <td><%= link_to 'Edit', edit_admin_video_category_video_path(@video_category,video) %></td>
+    <td><%= link_to 'Destroy', admin_video_category_video_path(@video_category,video), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+

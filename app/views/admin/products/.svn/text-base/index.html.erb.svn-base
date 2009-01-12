@@ -1,0 +1,23 @@
+<% @content_heading = "#{@category.title} Products" %>          
+<p><%= link_to 'New product', new_admin_store_category_product_path(@category) %></p>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Sub Title</th>
+    <th>Price</th>
+	<th>Shipping Code</th>
+  </tr>
+
+<% for product in @products %>
+  <tr  class="<%= cycle "even", "odd" %>">
+    <td><%=h product.title %></td>
+    <td><%=h product.sub_title %></td>
+    <td><%=h number_to_currency product.price %></td>
+	<td><%=h product.shipping_code %></td>
+	<td><%= link_to 'Up', up_admin_store_category_product_path(@category,product), :method => :put %> | <%= link_to 'Down', down_admin_store_category_product_path(@category,product), :method => :put %></td>
+    <td><%= link_to 'Show', admin_store_category_product_path(@category, product) %></td>
+    <td><%= link_to 'Edit', edit_admin_store_category_product_path(@category,product) %></td>
+    <td><%= link_to 'Destroy', admin_store_category_product_path(@category,product), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

@@ -1,0 +1,23 @@
+<% @content_heading = "Listing article_categories" %>
+<p><%= link_to 'New article_category', new_admin_article_category_path %></p>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Position</th>
+  </tr>
+
+<% for article_category in @article_categories %>
+  <tr>
+    <td><%=h article_category.title %></td>
+    <td><%= article_category.description %></td>
+	<td><%= link_to "Articles", admin_article_category_articles_path(article_category) %></td>
+    <td><%= position_links(article_category) %></td>
+    <td><%= link_to 'Show', admin_article_category_path(article_category) %></td>
+    <td><%= link_to 'Edit', edit_admin_article_category_path(article_category) %></td>
+    <td><%= link_to 'Destroy', admin_article_category_path(article_category), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+
+</table>
+

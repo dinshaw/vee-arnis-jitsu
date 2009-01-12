@@ -1,0 +1,22 @@
+<% @content_heading = "Listing professors" %>
+<p><%= link_to 'New professor', new_admin_professor_path %></p>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Name</th>
+  </tr>
+
+<% for professor in @professors %>
+  <tr>
+    <td><%=h professor.title %></td>
+    <td><%=h professor.name %></td>
+    <td><%= position_links(professor) %></td>
+    <td><%= link_to 'Show', admin_professor_path(professor) %></td>
+    <td><%= link_to 'Edit', edit_admin_professor_path(professor) %></td>
+    <td><%= link_to 'Destroy', admin_professor_path(professor), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

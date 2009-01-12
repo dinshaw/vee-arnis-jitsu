@@ -1,0 +1,23 @@
+<p><%= link_to 'Edit', edit_admin_testimonial_path(@testimonial) %> | <%= link_to 'Back', admin_testimonials_path %></p>
+<p>
+  <b>Title:</b>
+  <%=h @testimonial.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @testimonial.description %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%=h @testimonial.position %>
+</p>
+
+<p>
+  <b>Teaser:</b>
+  <%=h @testimonial.teaser %>
+</p>
+
+
+

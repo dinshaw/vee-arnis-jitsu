@@ -1,0 +1,21 @@
+<% @content_heading = "New store category" %>
+<p><%= link_to 'Back', admin_store_categories_path %></p>
+<%= error_messages_for :store_category %>
+
+<% form_for([:admin,@store_category]) do |f| %>
+  <p>
+    <b>Title</b><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <b>Description</b><br />
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+

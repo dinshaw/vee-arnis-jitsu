@@ -1,0 +1,29 @@
+<% @content_heading = "Articles - #{@article_category.title}" %>
+<p><%= link_to 'New article', new_admin_article_category_article_path(@article_category) %></p>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Parent</th>
+    <th>Published by</th>
+    <th>Published in</th>
+    <th>Published at</th>
+  </tr>
+
+<% for article in @articles %>
+  <tr>
+    <td><%=h article.title %></td>
+    <td><%=h article.parent.title if !article.parent.nil? %></td>
+    <td><%=h article.published_by %></td>
+    <td><%=h article.published_in %></td>
+    <td><%=h article.published_at %></td>
+	<td><%= link_to 'Up', up_admin_article_category_article_path(@article_category,article), :method => :put %> | <%= link_to 'Down', down_admin_article_category_article_path(@article_category,article), :method => :put %></td>
+    <td><%= link_to 'Show', admin_article_category_article_path(@article_category,article) %></td>
+    <td><%= link_to 'Edit', edit_admin_article_category_article_path(@article_category,article) %></td>
+    <td><%= link_to 'Destroy', admin_article_category_article_path(@article_category,article), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+

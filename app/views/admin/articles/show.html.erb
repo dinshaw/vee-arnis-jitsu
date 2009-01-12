@@ -1,0 +1,40 @@
+<p><%= link_to 'Edit', edit_admin_article_category_article_path(@article_category,@article) %> | <%= link_to 'Back', admin_article_category_articles_path(@article_category) %></p>
+
+<% if !@article.parent.nil? %>
+<p>
+  <b>Parent:</b>
+  <%=h @article.parent.title %>
+</p>
+<% end %>
+
+<div class="article_img">
+	<%= image_tag(@article.photo.public_filename(:article)) if @article.photo %>
+</div>
+
+<p>
+  <b>Title:</b>
+  <%=h @article.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @article.description %>
+</p>
+
+<p>
+  <b>Published by:</b>
+  <%=h @article.published_by %>
+</p>
+
+<p>
+  <b>Published in:</b>
+  <%=h @article.published_in %>
+</p>
+
+<p>
+  <b>Published at:</b>
+  <%=h @article.published_at %>
+</p>
+
+
+

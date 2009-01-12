@@ -1,0 +1,26 @@
+<% @content_heading = "Editing video" %>
+<p><%= link_to 'Show', admin_video_category_video_path(@video_category,@video) %> | <%= link_to 'Back', admin_video_category_videos_path(@video_category) %></p>
+<%= error_messages_for :video %>
+
+<% form_for([:admin,@video_category,@video]) do |f| %>
+  <p>
+    <b>Title</b><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <b>Description</b><br />
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <b>File path</b><br />
+    videos/<%= @video_category.title.tableize %>/ <%= f.text_field :file_path %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+

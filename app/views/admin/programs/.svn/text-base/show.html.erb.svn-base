@@ -1,0 +1,19 @@
+<p><%= link_to 'Edit', edit_admin_program_path(@program) %> | <%= link_to 'Back', admin_programs_path %></p>
+
+<p>
+  <b>Title:</b>
+  <%=h @program.title %>
+</p>
+
+<div class="article_img">
+	<%= image_tag(@program.photo.public_filename) if @program.photo %>
+</div>
+
+<p>
+  <b>Description:</b>
+  <%= @program.description %>
+</p>
+
+
+
+

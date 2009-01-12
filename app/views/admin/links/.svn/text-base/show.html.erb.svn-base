@@ -1,0 +1,20 @@
+<p><%= link_to 'Edit', edit_admin_link_path(@link) %> | <%= link_to 'Back', admin_links_path %></p>
+<p>
+  <b>Url:</b>
+  <%=h @link.url %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @link.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @link.description %>
+</p>
+
+
+
+
+

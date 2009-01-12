@@ -1,0 +1,28 @@
+<p><%= link_to 'Edit', edit_admin_award_path(@award) %> | <%= link_to 'Back', admin_awards_path %></p>
+<p>
+  <b>Title:</b>
+  <%=h @award.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @award.description %>
+</p>
+
+
+<p>
+  <b>Url:</b>
+  <%=h @award.url %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%=h @award.date %>
+</p>
+
+<div class="article_img">
+	<%= image_tag(@award.photo.public_filename) if @award.photo %>
+</div>
+
+
+

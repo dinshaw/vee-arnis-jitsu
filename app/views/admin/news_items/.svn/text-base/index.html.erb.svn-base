@@ -1,0 +1,22 @@
+<% @content_heading = "Listing news_items" %>
+<p><%= link_to 'New news_item', new_admin_news_item_path %></p>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Date</th>
+    <th>Position</th>
+  </tr>
+
+<% for news_item in @news_items %>
+  <tr>
+    <td><%=h news_item.title %></td>
+    <td><%= news_item.description %></td>
+    <td><%=h news_item.date %></td>
+    <td><%= position_links(news_item) %></td>
+    <td><%= link_to 'Show', admin_news_item_path(news_item) %></td>
+    <td><%= link_to 'Edit', edit_admin_news_item_path(news_item) %></td>
+    <td><%= link_to 'Destroy', admin_news_item_path(news_item), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

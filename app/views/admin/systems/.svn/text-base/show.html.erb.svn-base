@@ -1,0 +1,18 @@
+<p><%= link_to 'Edit', edit_admin_system_path(@system) %> | <%= link_to 'Back', admin_systems_path %></p><p>
+	
+	
+  <b>Title:</b>
+  <%=h @system.title %>
+</p>
+
+<div class="article_img">
+	<%= image_tag(@system.photo.public_filename) if @system.photo %>
+</div>
+
+
+<p>
+  <b>Description:</b>
+  <%= @system.description %>
+</p>
+
+

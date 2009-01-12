@@ -1,0 +1,26 @@
+<% @content_heading = "Listing links" %>
+<p><%= link_to 'New link', new_admin_link_path %></p>
+<table>
+  <tr>
+    <th>Url</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Position</th>
+  </tr>
+
+<% for link in @links %>
+  <tr>
+    <td><%=h link.url %></td>
+    <td><%=h link.title %></td>
+    <td><%= link.description %></td>
+    <td><%= position_links(link) %></td>
+    <td><%= link_to 'Show', admin_link_path(link) %></td>
+    <td><%= link_to 'Edit', edit_admin_link_path(link) %></td>
+    <td><%= link_to 'Destroy', admin_link_path(link), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+

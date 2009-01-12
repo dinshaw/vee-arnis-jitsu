@@ -1,0 +1,34 @@
+<% @content_heading = "Editing memorial" %>
+
+<%= error_messages_for :memorial %>
+
+<% form_for([:admin,@memorial]) do |f| %>
+  <p>
+    <b>Title</b><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <b>Description</b><br />
+    <%= f.text_area :description %>
+  </p>
+<p>
+	<b>Photo</b><br />
+	<%= f.file_field :uploaded_data_photo %>
+</p>
+
+
+		<% if !@memorial.attachments.photo.nil? %>
+		<%= image_tag @memorial.attachments.photo.public_filename(:thumb)  %>
+		<p>
+			<%= label :system, :remove_photo, "Remove Photo", :class => "left" %>
+			<%= f.check_box :remove_photo %>
+		</p>
+	<% end %>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', admin_memorial_path(@memorial) %> |
+<%= link_to 'Back', admin_memorials_path %>

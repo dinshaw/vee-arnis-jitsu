@@ -31,7 +31,17 @@ class StylesheetsController < ApplicationController
     @yellow = "#ffec05"
     @grey = "#ececec"
     @dark_grey = "#666"
+    @admin_content_bg = "#fcc"
+    
+    @table_border = "#fff"
+    @th_bg = "#ebebeb"    
+    @th_txt = "#333"    
+    @td_bg = "#f5f9fd"
+    @td_bg_even = "#e7f0f9"
+    @td_bg_hover = "#cce4fe"
   end
+  
+  
   
   # Set the layout widths
   def do_widths

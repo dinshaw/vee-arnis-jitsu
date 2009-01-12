@@ -1,0 +1,17 @@
+<p><%= link_to 'Edit', edit_admin_video_category_video_path(@video_category,@video) %> | <%= link_to 'Back', admin_video_category_videos_path(@video_category) %></p>
+<p>
+  <b>Title:</b>
+  <%=h @video.title %>
+</p>
+
+
+<div id="vaj_player">	
+	<%= render :partial => "videos/flash_player", :locals => {:video => @video} %>
+
+
+<%= @video.description %>
+
+</div>
+
+
+

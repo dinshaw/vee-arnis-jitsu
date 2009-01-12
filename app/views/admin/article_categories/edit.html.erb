@@ -1,0 +1,36 @@
+<% @content_heading = "Editing article_category" %>
+<p><%= link_to 'Show', admin_article_category_path(@article_category) %> | <%= link_to 'Back', admin_article_categories_path %></p>
+<%= error_messages_for :article_category %>
+
+<% form_for([:admin,@article_category], :html => {:multipart => true}) do |f| %>
+  <p>
+    <b>Title</b><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <b>Description</b><br />
+    <%= f.text_area :description %>
+  </p>
+
+<p>
+	<b>Photo</b><br />
+	<%= f.file_field :uploaded_data_photo %>
+</p>
+
+
+	<% if !@article_category.attachments.photo.nil? %>
+		<%= image_tag @article_category.attachments.photo.public_filename(:thumb)  %>
+		<p>
+			<%= label :article_category, :remove_photo, "Remove Photo", :class => "left" %>
+			<%= f.check_box :remove_photo %>
+		</p>
+	<% end %>
+
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+

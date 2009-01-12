@@ -1,0 +1,64 @@
+9
+
+dir
+138
+svn+ssh://dinshawd@74.53.208.111/home/dinshawd/svn-repos/sites/veearnisjitsu.com/trunk/app/views/admin/memorials
+svn+ssh://dinshawd@74.53.208.111/home/dinshawd/svn-repos/sites/veearnisjitsu.com
+
+
+
+2008-06-07T18:46:44.419069Z
+85
+dinshawd
+
+
+svn:special svn:externals svn:needs-lock
+
+edit.html.erb
+file
+
+
+
+
+2008-06-07T15:43:59.000000Z
+8e2c39fee1f4ba338fbd6bc6d861de60
+2008-06-07T18:46:44.419069Z
+85
+dinshawd
+
+index.html.erb
+file
+
+
+
+
+2008-06-07T15:33:35.000000Z
+444529b468dba27bc75ad7415b94b05b
+2008-06-07T18:46:44.419069Z
+85
+dinshawd
+
+new.html.erb
+file
+
+
+
+
+2008-06-07T15:35:36.000000Z
+e951c207d2c10fc1a27b0fc28fe52762
+2008-06-07T18:46:44.419069Z
+85
+dinshawd
+
+show.html.erb
+file
+
+
+
+
+2008-06-07T15:38:01.000000Z
+8d25e71862badff189068b481622b385
+2008-06-07T18:46:44.419069Z
+85
+dinshawd
+

@@ -1,0 +1,61 @@
+<% @page_title = "Edit Article" %>
+<p><%= link_to 'Show', admin_article_category_article_path(@article_category,@article) %> | <%= link_to 'Back to Press', admin_article_category_articles_path(@article_category) %></p>
+<%= error_messages_for :article %>
+
+<% form_for([:admin,@article_category, @article], :html => { :multipart => true }) do |f| %>
+
+<p>
+  <b>Parent Article (for multiple photo articles)</b><br />
+  <%= f.collection_select :parent_id, Article.find(:all, :conditions => ["parent_id is null AND id != ?",@article.id] ), :id, :title, :prompt => "Choose One..." %>
+</p>
+
+
+  <p>
+    <b>Title</b><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <b>Description</b><br />
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <b>Published By</b><br />
+    <%= f.text_field :published_by %>
+  </p>
+
+
+  <p>
+    <b>Published on</b><br />
+    <%= f.date_select :published_at, :start_year => 1980 %>
+  </p>
+
+  <p>
+    <b>Published in</b><br />
+    <%= f.text_field :published_in %>
+  </p>
+
+
+<p>
+	<b>Photo (or PDF)</b><br />
+	<%= f.file_field :uploaded_data_photo %>
+</p>
+
+
+	<% if !@article.attachments.photo.nil? %>
+		<%= image_tag @article.attachments.photo.public_filename(:thumb)  %>
+		<p>
+			<%= label :article, :remove_photo, "Remove Photo", :class => "left" %>
+			<%= f.check_box :remove_photo %>
+		</p>
+	<% end %>
+
+
+<br class='clear' />
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+

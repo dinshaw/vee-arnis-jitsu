@@ -1,0 +1,22 @@
+<% @content_heading = "Listing video_categories" %>
+<p><%= link_to 'New video_category', new_admin_video_category_path %></p>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Position</th>
+  </tr>
+
+<% for video_category in @video_categories %>
+  <tr>
+    <td><%=h video_category.title %></td>
+    <td><%= video_category.description %></td>
+	<td><%= link_to "Videos", admin_video_category_videos_path(video_category) %></td>
+    <td><%= position_links(video_category) %></td>
+    <td><%= link_to 'Edit', edit_admin_video_category_path(video_category) %></td>
+    <td><%= link_to 'Destroy', admin_video_category_path(video_category), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+
+</table>
+

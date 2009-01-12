@@ -1,0 +1,24 @@
+<% @content_heading = "#{@photo_category.title}: Photos" %>
+<p><%= link_to 'New photo', new_admin_photo_category_photo_path(@photo_category) %></p>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Caption</th>
+    <th>Url</th>
+    <th>Parent</th>
+  </tr>
+
+<% for photo in @photos %>
+  <tr>
+    <td><%=h photo.title %></td>
+    <td><%= photo.caption %></td>
+    <td><%=h photo.url %></td>
+    <td><%=h photo.parent.title if !photo.parent.nil? %></td>
+    <td><%= link_to 'Up', up_admin_photo_category_photo_path(@photo_category,photo), :method => :put %> | <%= link_to 'Down', down_admin_photo_category_photo_path(@photo_category,photo), :method => :put %></td>
+    <td><%= link_to 'Show', admin_photo_category_photo_path(@photo_category,photo) %></td>
+    <td><%= link_to 'Edit', edit_admin_photo_category_photo_path(@photo_category,photo) %></td>
+    <td><%= link_to 'Destroy', admin_photo_category_photo_path(@photo_category,photo), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+

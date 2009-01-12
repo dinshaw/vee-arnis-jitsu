@@ -1,10 +1,43 @@
 /* =Tables
 -----------------------------------------------------------------------------*/
 
-table {border-spacing: 0;border-collapse: collapse;}
-td {text-align: left;font-weight: normal;}
-tr.odd td{background-color:#e4efef;}
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	margin:10px 0;
+}
 
+table.billing .date{
+	width:200px;
+}
+table.billing td, table.billing th{
+	padding:2px 3px;
+}
+td {
+	text-align:left;
+	font-weight: normal;
+	background-color:<%= @td_bg %>;
+}
+
+td,th{
+	padding:8px;
+	border:2px solid <%= @table_border %>;
+	vertical-align: top;
+}
+
+thead th, tfoot th{
+	color:<%= @th_txt %>;
+	font-weight:normal;
+	background-color:<%= @th_bg %>;
+	}
+
+
+	tr.odd td{
+		background-color:<%= @td_bg_even %>;
+	}
+	
+/* Schedule
+************************************/
 .weekly-schedule, .calendar {
 	width:100%;
   margin:0 auto 20px auto;

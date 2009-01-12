@@ -9,8 +9,8 @@
 	<%= meta "description", meta_description %> 
 	<%= meta "keywords", meta_keywords %> 
 	
-	<%= javascript_include_tag "application", :cache => true  %>
-	<%= stylesheet_link_tag 'main', 'admin', 'errors', 'tables', 'forms', 'lists', 'typography', 'nav', :cache => true %>
+	<%= javascript_include_tag "application"  %>
+	<%= stylesheet_link_tag 'main', 'admin', 'errors', 'tables', 'forms', 'lists', 'typography', 'nav' %>
 	
 	<%= render :partial => "shared/tinymce" %>
 </head>
@@ -21,20 +21,32 @@
 			<h1>Admin Area - <%= RAILS_ENV %></h1>
 			<p><%= link_to "Public Site", root_path %></p>
 		</div> <!-- masthead -->
-	
 		
 		<div id="nav_admin">
-			<ul>
-				<li><%= link_to "Users", admin_users_path %></li>	
-				<li><%= link_to "Emails", admin_emails_path %></li>															
-				<li><%= link_to "CMS Pages", admin_cms_pages_path %></li>
-				<li><%= link_to "Tags", admin_tags_path %></li>
-				<li><%= link_to "Options", admin_options_path %></li>											
-				<li><%= link_to "FAQ", admin_faq_categories_path %></li>															
-				<li><%= link_to "Config Values", admin_config_values_path %></li>
-				<li><%= link_to "Roles", admin_roles_path %></li>											
-				<li><%= link_to "Logout", logout_path %></li>
-			</ul>
+					<ul>
+						<li><%= link_to "The System", admin_systems_path %></li>
+						<li><%= link_to "Programs", admin_programs_path %></li>
+						<li><%= link_to "Facilities", admin_facilities_path  %></li>				
+						<li><%= link_to "Store", admin_store_categories_path %></li>
+						<li><%= link_to "Home", "/" %></li>
+						<li><%= link_to "Online Training", "" %></li>
+						<li><%= link_to "Photos", admin_photo_categories_path %></li>
+						<li><%= link_to "Videos", admin_video_categories_path  %></li>
+						<li><%= link_to "Press", admin_article_categories_path %></li>
+						<li><%= link_to "Events", admin_events_path %></li>
+						<li><%= link_to "News", admin_news_items_path %></li>
+						<li><%= link_to "Testimonials", admin_testimonials_path %></li>
+						<li><%= link_to "In Memorium", admin_memorials_path %></li>
+						<li><%= link_to "Awards &amp; Honors", admin_awards_path %></li>
+						<li><%= link_to "Professors", admin_professors_path %></li>
+						<li><%= link_to "Links", admin_links_path %></li>
+						<li>----</li>
+						<li><%= link_to "Users", admin_users_path %></li>
+						<li><%= link_to "Roles", admin_roles_path %></li>
+						<li><%= link_to "Config Values", admin_config_values_path %></li>				
+						<li><%= link_to "Logout", logout_path %></li>
+					</ul>
+				</div>
 		</div><!-- nav_admin -->
 				
 		<div id="admin_content">

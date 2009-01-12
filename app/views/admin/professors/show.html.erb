@@ -1,0 +1,22 @@
+<p><%= link_to 'Edit', edit_admin_professor_path(@professor) %> | <%= link_to 'Back', admin_professors_path %></p>
+
+
+<p>
+  <b>Name:</b>
+  <%=h @professor.name %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @professor.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @professor.description %>
+</p>
+
+<div class="article_img">
+	<%= image_tag(@professor.photo.public_filename) if @professor.photo %>
+</div>
+

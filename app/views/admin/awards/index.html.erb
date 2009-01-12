@@ -1,0 +1,25 @@
+<% @content_heading = "Listing awards" %>
+<p><%= link_to 'New award', new_admin_award_path %></p>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Position</th>
+    <th>Url</th>
+    <th>Date</th>
+  </tr>
+
+<% for award in @awards %>
+  <tr>
+    <td><%=h award.title %></td>
+    <td><%=h award.description %></td>
+    <td><%=h award.url %></td>
+    <td><%=h award.date %></td>
+    <td><%= position_links(award) %></td>
+    <td><%= link_to 'Show', admin_award_path(award) %></td>
+    <td><%= link_to 'Edit', edit_admin_award_path(award) %></td>
+    <td><%= link_to 'Destroy', admin_award_path(award), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+

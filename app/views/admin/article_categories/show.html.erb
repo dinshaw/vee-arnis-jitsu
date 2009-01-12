@@ -1,0 +1,16 @@
+<p><%= link_to 'Edit', edit_admin_article_category_path(@article_category) %> | <%= link_to 'Back', admin_article_categories_path %></p>
+
+<p>
+  <b>Title:</b>
+  <%=h @article_category.title %>
+</p>
+<div class="article_img">
+	<%= image_tag(@article_category.photo.public_filename) if @article_category.photo %>
+</div>
+
+
+<p>
+  <b>Description:</b>
+  <%=h @article_category.description %>
+</p>
+

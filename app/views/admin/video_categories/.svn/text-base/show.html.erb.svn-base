@@ -1,0 +1,19 @@
+<p><%= link_to 'Edit', edit_admin_video_category_path(@video_category) %> | <%= link_to 'Back', admin_video_categories_path %></p>
+
+<p>
+  <b>Title:</b>
+  <%=h @video_category.title %>
+</p>
+
+<div class="article_img">
+	<%= image_tag(@video_category.photo.public_filename) if @video_category.photo %>
+</div>
+
+<p>
+  <b>Description:</b>
+  <%= @video_category.description %>
+</p>
+
+
+
+

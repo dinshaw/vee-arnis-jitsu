@@ -1,0 +1,23 @@
+<% @content_heading = "Listing memorials" %>
+<p><%= link_to 'New memorial', new_admin_memorial_path %></p>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Position</th>
+  </tr>
+
+<% for memorial in @memorials %>
+  <tr>
+    <td><%=h memorial.title %></td>
+    <td><%= memorial.description %></td>
+    <td><%= position_links(memorial) %></td>
+    <td><%= link_to 'Show', admin_memorial_path(memorial) %></td>
+    <td><%= link_to 'Edit', edit_admin_memorial_path(memorial) %></td>
+    <td><%= link_to 'Destroy', admin_memorial_path(memorial), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+
+

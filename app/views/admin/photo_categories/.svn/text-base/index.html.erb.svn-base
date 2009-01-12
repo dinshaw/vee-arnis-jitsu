@@ -1,0 +1,23 @@
+<% @content_heading = "Listing photo_categories" %>
+<p><%= link_to 'New photo_category', new_admin_photo_category_path %></p>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Position</th>
+  </tr>
+
+<% for photo_category in @photo_categories %>
+  <tr>
+    <td><%=h photo_category.title %></td>
+    <td><%=h photo_category.description %></td>
+	<td><%= link_to "Photos", admin_photo_category_photos_path(photo_category) %></td>
+    <td><%= position_links(photo_category) %></td>
+    <td><%= link_to 'Show', admin_photo_category_path(photo_category) %></td>
+    <td><%= link_to 'Edit', edit_admin_photo_category_path(photo_category) %></td>
+    <td><%= link_to 'Destroy', admin_photo_category_path(photo_category), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+
+</table>
+

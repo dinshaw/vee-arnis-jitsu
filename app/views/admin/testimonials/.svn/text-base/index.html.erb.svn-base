@@ -1,0 +1,26 @@
+<% @content_heading = "Listing testimonials" %>
+<p><%= link_to 'New testimonial', new_admin_testimonial_path %></p>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Teaser</th>
+    <th>Position</th>
+  </tr>
+
+<% for testimonial in @testimonials %>
+  <tr>
+    <td><%=h testimonial.title %></td>
+    <td><%= testimonial.description %></td>
+    <td><%=h testimonial.teaser %></td>
+    <td><%= position_links(testimonial) %></td>
+
+    <td><%= link_to 'Show', admin_testimonial_path(testimonial) %></td>
+    <td><%= link_to 'Edit', edit_admin_testimonial_path(testimonial) %></td>
+    <td><%= link_to 'Destroy', admin_testimonial_path(testimonial), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

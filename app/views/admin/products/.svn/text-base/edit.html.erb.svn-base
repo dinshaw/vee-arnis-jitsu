@@ -1,0 +1,51 @@
+<% @content_heading = "#{@category.title} Products" %>          
+<p><%= link_to 'Show', admin_store_category_product_path(@category, @product) %> | <%= link_to 'Back', admin_store_category_products_path(@category) %></p>
+
+<%= error_messages_for :product %>
+
+<% form_for([:admin, @category, @product], :html => {:multipart => true}) do |f| %>
+  <p>
+    <b>Title</b><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <b>Sub-Title</b><br />
+    <%= f.text_field :sub_title %>
+  </p>
+  <p>
+    <b>Description</b><br />
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <b>Price</b><br />
+    <%= f.text_field :price %>
+  </p>
+  <p>
+    <b>Shipping Code</b><br />
+    <%= f.text_field :shipping_code %>
+  </p>
+
+<p>
+	<b>Photo</b><br />
+	<%= f.file_field :uploaded_data_photo %>
+</p>
+
+
+	<% if !@product.attachments.photo.nil? %>
+		<%= image_tag @product.photo.public_filename(:thumb)  %>
+		<p>
+			<%= label :article, :remove_photo, "Remove Photo", :class => "left" %>
+			<%= f.check_box :remove_photo %>
+		</p>
+		<br class="clear" />
+	<% end %>
+<p>
+  <b>Video</b><br />
+	<%= f.collection_select(:video_id, VideoCategory.find_by_title("Store").videos, :id, :title, :include_blank => true) rescue "'Store' Video Category not created." %>
+  </p>
+  
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
