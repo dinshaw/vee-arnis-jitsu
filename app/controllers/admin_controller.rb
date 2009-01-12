@@ -15,7 +15,7 @@ class AdminController < ApplicationController
     end
   end
     
-  ssl_required :index, :edit, :destroy, :update, :create, :new, :show, :superuser_member_override
+  # ssl_required :index, :edit, :destroy, :update, :create, :new, :show, :superuser_member_override
   
   def index
     
