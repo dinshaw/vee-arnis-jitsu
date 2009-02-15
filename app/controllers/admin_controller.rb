@@ -1,5 +1,6 @@
 class AdminController < ApplicationController  
   include ListMethods
+  before_filter :login_required
   
   layout "admin"
   
