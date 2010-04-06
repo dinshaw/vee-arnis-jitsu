@@ -5,9 +5,6 @@
   <%=h @facility.title %>
 </p>
 
-<div class="article_img">
-	<%= image_tag(@facility.photo.public_filename) if @facility.photo %>
-</div>
 <p>
   <b>Address:</b>
   <%=h @facility.address %>

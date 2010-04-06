@@ -1,13 +1,13 @@
 class Facility < ActiveRecord::Base
   include Validations
-  include AttachmentUpload
-  attachment_names :photo
+  # include AttachmentUpload
+  # attachment_names :photo
   
   acts_as_list
   validates_presence_of :title, :address, :city, :state  
 
   def validate
-    validate_phone('phone')
+    validate_phone('phone') if !phone.blank?
   end
 
   def city_state_zip

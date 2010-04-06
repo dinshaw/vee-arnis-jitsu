@@ -44,7 +44,7 @@ class Admin::FacilitiesController < AdminController
     @facility = Facility.new(params[:facility])
 
     respond_to do |format|
-      if @facility.save_with_attachments
+      if @facility.save
         flash[:notice] = 'Facility was successfully created.'
         format.html { redirect_to admin_facility_url(@facility) }
         format.xml  { render :xml => @facility, :status => :created, :location => @facility }
@@ -61,7 +61,7 @@ class Admin::FacilitiesController < AdminController
     @facility = Facility.find(params[:id])
 
     respond_to do |format|
-      if @facility.update_with_attachments(params[:facility])
+      if @facility.update_attributes(params[:facility])
         flash[:notice] = 'Facility was successfully updated.'
         format.html { redirect_to admin_facility_url(@facility) }
         format.xml  { head :ok }
